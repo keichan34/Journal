@@ -1,0 +1,249 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  box-sizing: border-box;
+  list-style: none;
+  font-style: normal;
+  font-display: swap;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga'; }
+
+body {
+  font-size: 14px;
+  font-weight: normal; }
+
+main {
+  display: block; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.jnl-wrapper {
+  width: 960px;
+  margin: 0 auto; }
+
+.jnl-button {
+  cursor: pointer;
+  position: relative;
+  margin-left: 0.75em;
+  padding: 6px 10px;
+  border: 1px solid #EEEEEE;
+  background-color: #FFFFFF;
+  background-image: -webkit-linear-gradient(top, #cc0000, #990000);
+  background-image: linear-gradient(to bottom, #cc0000, #990000);
+  border-radius: 2px;
+  box-shadow: 0 0 4px #EEEEEE;
+  color: #FFFFFF;
+  -webkit-transition: background-color background-image 300ms ease-in;
+  transition: background-color background-image 300ms ease-in; }
+
+.jnl-buttons-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.jnl-icon {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: none;
+  font-family: 'Material Icons';
+  font-size: 24px; }
+  .jnl-icon.jnl-icon--darkbg {
+    color: #FFFFFF; }
+
+body {
+  background-color: #EFEFEF; }
+
+/**
+ * Navigation
+**/
+.jnl-navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  background-color: #14324F;
+  background-image: -webkit-linear-gradient(top, #2867A1, #14324F);
+  background-image: linear-gradient(to bottom, #2867A1, #14324F);
+  -webkit-transition: width 450ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: width 450ms cubic-bezier(0.19, 1, 0.22, 1); }
+
+.jnl-navigation--opened {
+  width: 200px; }
+
+.jnl-navigation__title {
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0);
+  -webkit-transition: color 450ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: color 450ms cubic-bezier(0.19, 1, 0.22, 1); }
+  .jnl-navigation__title:first-letter {
+    color: white; }
+
+.jnl-navigation--opened .jnl-navigation__title {
+  color: white; }
+
+.jnl-navigation__list--bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.jnl-navigation__list__item {
+  overflow: hidden;
+  height: 50px;
+  white-space: nowrap;
+  -webkit-transition: background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
+  .jnl-navigation__list__item:hover, .jnl-navigation__list__item:focus {
+    background-color: #2D74B5; }
+  .jnl-navigation__list__item > a {
+    display: block;
+    font-weight: bold;
+    text-decoration: none; }
+    .jnl-navigation__list__item > a > .jnl-icon {
+      width: 50px;
+      height: 50px; }
+    .jnl-navigation__list__item > a > span {
+      color: #FFFFFF; }
+
+.jnl-navigation__list__item--active {
+  background-color: #14324F; }
+
+/**
+ * Main Layout
+**/
+/**
+ * Main Layout __ Header
+**/
+.jnl-layout__header {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 6px 0 rgba(51, 51, 51, 0.4);
+  -webkit-transition: left 450ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: left 450ms cubic-bezier(0.19, 1, 0.22, 1); }
+
+.jnl-navigation--opened + .jnl-layout .jnl-layout__header {
+  left: 200px; }
+
+.jnl-layout__header__list,
+.jnl-layout__header__list--bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%; }
+
+.jnl-layout__header__list--bottom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%; }
+
+.jnl-layout__header__list__item > a {
+  display: block;
+  line-height: 50px;
+  text-decoration: none;
+  -webkit-transition: background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
+  .jnl-layout__header__list__item > a:hover {
+    background-color: #EEF1F6; }
+
+/**
+ * Main Layout __ Footer
+**/
+.jnl-layout__footer,
+.jnl-layout__footer--center,
+.jnl-layout__footer--right {
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  background-color: #14324F;
+  -webkit-transition: left 450ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: left 450ms cubic-bezier(0.19, 1, 0.22, 1); }
+
+.jnl-navigation--opened + .jnl-layout .jnl-layout__footer,
+.jnl-navigation--opened + .jnl-layout .jnl-layout__footer--center,
+.jnl-navigation--opened + .jnl-layout .jnl-layout__footer--right {
+  left: 200px; }
+
+.jnl-layout__footer--center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.jnl-layout__footer--right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+.jnl-layout__footer__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.jnl-layout__footer__list__item {
+  padding-top: 15px; }
+  .jnl-layout__footer__list__item > a {
+    color: #FFFFFF; }
+    .jnl-layout__footer__list__item > a:hover {
+      text-decoration: none; }
+
+/**
+ * Main Layout __ Contents
+**/
+.jnl-layout__contents {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 50px;
+  left: 50px;
+  -webkit-transition: left 450ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: left 450ms cubic-bezier(0.19, 1, 0.22, 1); }
+
+.jnl-navigation--opened + .jnl-layout .njl-layout__contents {
+  left: 200px; }
+
+.jnl-layout__contents__pages {
+  width: 300px;
+  height: 100%;
+  background-color: #F6F6F6;
+  box-shadow: -3px 0 10px 1px rgba(51, 51, 51, 0.2); }
+
+.jnl-layout__contents__pages__headline {
+  height: 50px;
+  background-color: #FFFFFF; }
+
+.jnl-layout__contents__pages__toolbar {
+  height: 50px;
+  background-color: #EDF1F4; }
+/*# sourceMappingURL=style.css.map */
