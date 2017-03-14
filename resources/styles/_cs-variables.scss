@@ -1,53 +1,54 @@
 // For block elements.
-$cs-wrapper-width: 960px;
-$cs-header-height: 50px;
-$cs-navigation-width: 50px;
-$cs-navigation-width--opened: 200px;
-$cs-pages-list-width: 300px;
-$cs-footer-height: 50px;
+$cs-wrapper__width: 960px;
+$cs-header__height: 50px;
+$cs-navigation__width: 50px;
+$cs-navigation__width--opened: 200px;
+$cs-pages__list__width: 300px;
+$cs-pages__list__text-height: 50px;
+$cs-footer__height: 50px;
 
 
 // For base colours.
-$basecolor-primary: red;
-$basecolor-secondary: purple;
-$basecolor-valid: green;
-$basecolor-invalid: red;
+$basecolor--primary: red;
+$basecolor--secondary: purple;
+$basecolor--valid: green;
+$basecolor--invalid: red;
 
 
 // For foreground colours.
-$fgcolor-normal: #222222;
-$fgcolor-darkbg: #FFFFFF;
-$fgcolor-primary: $basecolor-primary;
-$fgcolor-secondary: $basecolor-secondary;
-$fgcolor-link: skyblue;
-$fgcolor-midpriority: #666666;
-$fgcolor-lowpriority: #AAAAAA;
-$fgcolor-valid: $basecolor-valid;
-$fgcolor-invalid: $basecolor-invalid;
+$fgcolor--normal: #222222;
+$fgcolor--midpriority: #666666;
+$fgcolor--lowpriority: #AAAAAA;
+$fgcolor--darkbg: #FFFFFF;
+$fgcolor--primary: $basecolor--primary;
+$fgcolor--secondary: $basecolor--secondary;
+$fgcolor--valid: $basecolor--valid;
+$fgcolor--invalid: $basecolor--invalid;
+$fgcolor__link: skyblue;
 
 
 // For background colours.
-$bgcolor-normal: #FFFFFF;
-$bgcolor-darkbg: #222222;
-$bgcolor-overlay-base: #000000;
-$bgcolor-primary: $basecolor-primary;
-$bgcolor-secondary: $basecolor-secondary;
+$bgcolor--normal: #FFFFFF;
+$bgcolor--darkbg: #222222;
+$bgcolor--primary: $basecolor--primary;
+$bgcolor--secondary: $basecolor--secondary;
+$bgcolor__overlay__base: #000000;
 
 
 // For border colours.
-$bdcolor-normal: #EEEEEE;
-$bdcolor-darkbg: #FFFFFF;
-$bdcolor-primary: $basecolor-primary;
-$bdcolor-secondary: $basecolor-secondary;
+$bdcolor--normal: #EEEEEE;
+$bdcolor--darkbg: #FFFFFF;
+$bdcolor--primary: $basecolor--primary;
+$bdcolor--secondary: $basecolor--secondary;
 
 
 // For border styles.
-$bdradius-normal: 2px;
-$bdradius-circle: 100%;
+$bdradius--normal: 2px;
+$bdradius--circle: 100%;
 
 
 // For duration animations
-$duration-normal: 300ms;
-$duration-appearance: 450ms;
-$duration-animation: 900ms;
+$duration--normal: 300ms;
+$duration__appearance: 450ms;
+$duration__animation: 900ms;
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);

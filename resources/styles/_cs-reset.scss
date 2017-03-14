@@ -14,9 +14,21 @@
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: 'liga';
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
+  font-family:
+    "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro",
+    "メイリオ",
+    Meiryo,
+    "ＭＳ Ｐゴシック",
+    "MS PGothic",
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.5;
   font-size: 14px;
   font-weight: normal;
 }
@@ -29,3 +41,21 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+
+  + * {
+    margin-top: 1rem;
+  }
+}
+
+h1 { font-size: 26px; }
+h2 { font-size: 24px; }
+h3 { font-size: 22px; }
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+
+p { font-size: 14px; }
+* + p { margin-top: 1rem; }

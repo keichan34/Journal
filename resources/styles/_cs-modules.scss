@@ -1,6 +1,8 @@
-// Base Layouts
+/**
+ * Base Layouts
+**/
 .jnl-wrapper {
-  width: $cs-wrapper-width;
+  width: $cs-wrapper__width;
   margin: 0 auto;
 }
 
@@ -8,18 +10,21 @@
   // height
 }
 
-// Button Components
+
+/**
+ * Button Components
+**/
 .jnl-button {
   cursor: pointer;
   position: relative;
   margin-left: 0.75em;
   padding: 6px 10px;
-  border: 1px solid $bdcolor-normal;
-  background-color: $bgcolor-normal;
-  background-image: linear-gradient(to bottom, darken($bgcolor-primary, 10%), darken($bgcolor-primary, 20%));
-  border-radius: $bdradius-normal;
-  box-shadow: 0 0 4px $bdcolor-normal;
-  color: $fgcolor-darkbg;
+  border: 1px solid $bdcolor--normal;
+  background-color: $bgcolor--normal;
+  background-image: linear-gradient(to bottom, darken($bgcolor--primary, 10%), darken($bgcolor--primary, 20%));
+  border-radius: $bdradius--normal;
+  box-shadow: 0 0 4px $bdcolor--normal;
+  color: $fgcolor--darkbg;
   transition: background-color background-image 300ms ease-in;
 }
 
@@ -28,6 +33,9 @@
   justify-content: center;
 }
 
+/**
+ * Icons
+**/
 .jnl-icon {
   display: inline-block;
   line-height: 1;
@@ -37,6 +45,80 @@
   font-size: 24px;
 
   &.jnl-icon--darkbg {
-    color: $fgcolor-darkbg;
+    color: $fgcolor--darkbg;
   }
+}
+
+/**
+ * Notifications
+**/
+.jnl-notifications {
+  border: 1px solid $bdcolor--normal;
+  background-color: $bgcolor--normal;
+}
+
+/**
+ * Form Fields
+**/
+.jnl-formfield {
+  width: 100%;
+
+  + .jnl-formfield {
+    margin-top: 10px;
+  }
+}
+
+.jnl-formfield__label {
+  display: inline-block;
+  width: 200px;
+}
+
+[class^='jnl-formfield__input'],
+textarea {
+  width: 200px;
+  max-width: 100%;
+  height: 35px;
+  padding: 0 6px;
+  border: 1px solid $bdcolor--normal;
+  outline: 0;
+  background-color: #F9F9F9;
+  font-family:
+    "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro",
+    "メイリオ",
+    Meiryo,
+    "ＭＳ Ｐゴシック",
+    "MS PGothic",
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  line-height: 35px;
+  transition:
+    border-color $duration--normal $ease-out-expo,
+    background-color $duration--normal $ease-out-expo;
+
+  &:focus,
+  &:active {
+    border-color: #0079C9;
+    background-color: $bgcolor--normal;
+  }
+}
+
+.jnl-formfield__input--s {
+  width: 100px;
+}
+
+.jnl-formfield__input--l {
+  width: 360px;
+}
+
+.jnl-formfield__input--xl {
+  // NOTE: parentWidth - parentMargins - parentPaddings
+  width: 850px - 20 * 2 - 20 * 2;
+}
+
+.jnl-formfield__label + .jnl-formfield__input--xl {
+  // NOTE: parentWidth - parentMargins - parentPaddings - labelWidth - elementMargins
+  width: 850px - 20 * 2 - 20 * 2 - 200px - 20px * 2;
 }

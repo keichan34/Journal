@@ -6,32 +6,33 @@ body {
  * Navigation
 **/
 .jnl-navigation {
+  z-index: 999 + 1;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
-  width: $cs-navigation-width;
+  width: $cs-navigation__width;
   background-color: #14324F;
   background-image: linear-gradient(to bottom, #2867A1, #14324F);
-  transition: width $duration-appearance $ease-out-expo;
+  transition: width $duration__appearance $ease-out-expo;
 }
 
 .jnl-navigation--opened {
-  width: $cs-navigation-width--opened;
+  width: $cs-navigation__width--opened;
 }
 
 .jnl-navigation__title {
   white-space: nowrap;
-  color: rgba($fgcolor-darkbg, 0);
-  transition: color $duration-appearance $ease-out-expo;
+  color: rgba($fgcolor--darkbg, 0);
+  transition: color $duration__appearance $ease-out-expo;
 
   &:first-letter {
-    color: rgba($fgcolor-darkbg, 1);
+    color: rgba($fgcolor--darkbg, 1);
   }
 }
 
 .jnl-navigation--opened .jnl-navigation__title {
-  color: rgba($fgcolor-darkbg, 1);
+  color: rgba($fgcolor--darkbg, 1);
 }
 
 .jnl-navigation__list--bottom {
@@ -43,9 +44,9 @@ body {
 
 .jnl-navigation__list__item {
   overflow: hidden;
-  height: $cs-navigation-width;
+  height: $cs-navigation__width;
   white-space: nowrap;
-  transition: background-color $duration-normal $ease-out-expo;
+  transition: background-color $duration--normal $ease-out-expo;
 
   &:hover, &:focus {
     background-color: #2D74B5;
@@ -57,12 +58,12 @@ body {
     text-decoration: none;
 
     > .jnl-icon {
-      width: $cs-navigation-width;
-      height: $cs-navigation-width;
+      width: $cs-navigation__width;
+      height: $cs-navigation__width;
     }
 
     > span {
-      color: $fgcolor-darkbg;
+      color: $fgcolor--darkbg;
     }
   }
 }
@@ -80,21 +81,22 @@ body {
  * Main Layout __ Header
 **/
 .jnl-layout__header {
+  z-index: 999;
   overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;
-  left: $cs-navigation-width;
+  left: $cs-navigation__width;
   display: flex;
-  height: $cs-header-height;
-  background-color: $bgcolor-normal;
+  height: $cs-header__height;
+  background-color: $bgcolor--normal;
   box-shadow: 0 1px 6px 0 rgba(51,51,51, 0.4);
-  transition: left $duration-appearance $ease-out-expo;
+  transition: left $duration__appearance $ease-out-expo;
 }
 
 .jnl-navigation--opened + .jnl-layout {
   .jnl-layout__header {
-    left: $cs-navigation-width--opened;
+    left: $cs-navigation__width--opened;
   }
 }
 
@@ -114,9 +116,9 @@ body {
 .jnl-layout__header__list__item {
   > a {
     display: block;
-    line-height: $cs-header-height;
+    line-height: $cs-header__height;
     text-decoration: none;
-    transition: background-color $duration-normal $ease-out-expo;
+    transition: background-color $duration--normal $ease-out-expo;
 
     &:hover {
       background-color: #EEF1F6;
@@ -130,22 +132,23 @@ body {
 .jnl-layout__footer,
 .jnl-layout__footer--center,
 .jnl-layout__footer--right {
+  z-index: 999;
   overflow: hidden;
   position: absolute;
   right: 0;
   bottom: 0;
-  left: $cs-navigation-width;
+  left: $cs-navigation__width;
   display: flex;
-  height: $cs-footer-height;
+  height: $cs-footer__height;
   background-color: #14324F;
-  transition: left $duration-appearance $ease-out-expo;
+  transition: left $duration__appearance $ease-out-expo;
 }
 
 .jnl-navigation--opened + .jnl-layout {
   .jnl-layout__footer,
   .jnl-layout__footer--center,
   .jnl-layout__footer--right {
-    left: $cs-navigation-width--opened;
+    left: $cs-navigation__width--opened;
   }
 }
 
@@ -165,7 +168,7 @@ body {
   padding-top: 15px;
 
   > a {
-    color: $fgcolor-darkbg;
+    color: $fgcolor--darkbg;
 
     &:hover {
       text-decoration: none;
@@ -177,33 +180,138 @@ body {
  * Main Layout __ Contents
 **/
 .jnl-layout__contents {
+  z-index: 99;
   position: absolute;
-  top: $cs-header-height;
+  top: $cs-header__height;
   right: 0;
-  bottom: $cs-footer-height;
-  left: $cs-navigation-width;
-  transition: left $duration-appearance $ease-out-expo;
+  bottom: $cs-footer__height;
+  left: $cs-navigation__width;
+  transition: left $duration__appearance $ease-out-expo;
 }
 
 .jnl-navigation--opened + .jnl-layout {
   .njl-layout__contents {
-    left: $cs-navigation-width--opened;
+    left: $cs-navigation__width--opened;
   }
 }
 
 .jnl-layout__contents__pages {
-  width: $cs-pages-list-width;
-  height: 100%;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: $cs-pages__list__width;
+  height: auto;
   background-color: #F6F6F6;
   box-shadow: -3px 0 10px 1px rgba(51,51,51, 0.2);
+
+  + .jnl-layout__contents__pages,
+  .jnl-layout__contents__pages {
+    left: $cs-pages__list__width;
+  }
 }
 
 .jnl-layout__contents__pages__headline {
-  height: $cs-header-height;
-  background-color: $bgcolor-normal;
+  height: $cs-pages__list__text-height;
+  background-color: $bgcolor--normal;
 }
 
-.jnl-layout__contents__pages__toolbar {
-  height: $cs-header-height;
+.jnl-layout__contents__pages__toolbar,
+.jnl-layout__contents__pages__toolbar--center,
+.jnl-layout__contents__pages__toolbar--right {
+  display: flex;
+  height: $cs-pages__list__text-height;
   background-color: #EDF1F4;
+  transition: background-color $duration--normal $ease-out-expo;
+
+  > a,
+  > button {
+    min-width: $cs-navigation__width;
+    font-size: 14px;
+    color: #175680;
+
+    &:hover {
+      background-color: #F4F6F8;
+    }
+  }
+}
+
+.jnl-layout__contents__pages__toolbar--center {
+  justify-content: center;
+}
+
+.jnl-layout__contents__pages__toolbar--right {
+  justify-content: flex-end;
+}
+
+.jnl-layout__contents__pages__search {
+  display: block;
+  position: relative;
+
+  > .jnl-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  > input {
+    display: block;
+    width: 100%;
+    height: $cs-pages__list__text-height;
+    line-height: $cs-pages__list__text-height;
+  }
+}
+
+.jnl-layout__contents__pages__list {
+  border-top: 1px solid $bdcolor--normal;
+  background-color: $bgcolor--normal;
+
+  a {
+    display: block;
+    height: $cs-pages__list__text-height;
+    transition: background-color $duration--normal $ease-out-expo;
+
+    &:hover {
+      background-color: #EBF2F6;
+    }
+  }
+}
+
+.jnl-layout__contents__pages__list__headline {
+  height: $cs-pages__list__text-height;
+}
+
+.jnl-layout__contents__article {
+  z-index: 999;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 850px;
+  background-color: #F6F6F6;
+  box-shadow: -3px 0 10px 1px rgba(51,51,51,.2);
+}
+
+.jnl-layout__contents__article__header {
+  height: $cs-pages__list__text-height;
+  background-color: $bgcolor--normal;
+}
+
+.jnl-layout__contents__article__sections {
+  padding: 20px;
+  border-top: 1px solid $bdcolor--normal;
+}
+
+.jnl-layout__contents__article__sections__headline {
+  height: $cs-pages__list__text-height;
+  border-bottom: 1px solid $bdcolor--normal;
+}
+
+.jnl-layout__contents__article__sections__section {
+  margin-top: 20px;
+  padding: 0 20px 20px;
+  border: 1px solid $bdcolor--normal;
+  background-color: $bgcolor--normal;
 }

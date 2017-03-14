@@ -1,0 +1,33 @@
+<% include ../../../resources/components/_variables.ejs %>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= $g.title %></title>
+  <link rel="icon" href="../assets/images/favicon.ico">
+  <link rel="stylesheet" href="../assets/styles/style.css">
+</head>
+<body>
+
+<div class="jnl-wrapper">
+  <% include ../../../resources/components/_templates/jnl-navigation.ejs %>
+
+  <div class="jnl-layout">
+    <% include ../../../resources/components/_templates/jnl-layout__header.ejs %>
+
+    <main class="jnl-layout__contents">
+      <% include ../../../resources/components/_templates/jnl-layout__contents__pages.ejs %>
+
+      <%# include ../../../resources/components/_templates/jnl-layout__contents__pages.ejs %>
+
+      <% include ../../../resources/components/_templates/jnl-layout__contents__article.ejs %>
+    </main>
+
+
+    <% include ../../../resources/components/_templates/jnl-layout__footer.ejs %>
+  </div>
+</div>
+
+<script src="../assets/scripts/bundle.js"></script>
