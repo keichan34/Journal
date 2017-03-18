@@ -17,17 +17,18 @@
   <div class="jnl-layout">
     <% include ../../../resources/components/_templates/jnl-layout__header.ejs %>
 
-    <main class="jnl-layout__contents">
-      <% include ../../../resources/components/_templates/jnl-layout__contents__pages.ejs %>
+    <main id="jsi-jnl-layout__contents" class="jnl-layout__contents">
+      <% include ../../../resources/components/_templates/jnl-layout__contents__pages--first.ejs %>
 
-      <%# include ../../../resources/components/_templates/jnl-layout__contents__pages.ejs %>
+      <% include ../../../resources/components/_templates/jnl-layout__contents__pages--second.ejs %>
 
       <% include ../../../resources/components/_templates/jnl-layout__contents__article.ejs %>
     </main>
 
-
     <% include ../../../resources/components/_templates/jnl-layout__footer.ejs %>
   </div>
 </div>
+
+<% include ../../../resources/components/_templates/jnl-toasts.ejs %>
 
 <script src="../assets/scripts/bundle.js"></script>

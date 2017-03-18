@@ -1,14 +1,14 @@
-<article class="jnl-layout__contents__article">
-  <header class="jnl-layout__contents__article__header">
-    <h2 class="jnl-layout__contents__article__headline">Lorem ipsum dolor sit amet</h2>
-  </header>
+<article data-pane-target="demo-pane-third" class="jnl-layout__contents__article jsc-jnl-layout__pane">
+  <h2 class="jnl-layout__contents__article__headline jsc-layout__pane__headline">Lorem ipsum dolor sit amet</h2>
 
   <div class="jnl-layout__contents__article__sections">
+    <%# TODO:
     <ul class="jnl-notifications">
       <li class="information">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
       <li class="warning">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
       <li class="error">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
     </ul>
+    %>
 
     <section class="jnl-layout__contents__article__sections__section">
       <h3 class="jnl-layout__contents__article__sections__section__headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
@@ -29,96 +29,196 @@
       <p>This is the next paragraph. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
       <form>
-        <legend class="jnl-formfield">
-          <label class="jnl-formfield__label">Input--default</label>
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input--default</legend>
           <input type="text" value="Text Input" class="jnl-formfield__input">
-        </legend>
+        </fieldset>
 
-        <legend class="jnl-formfield">
-          <label class="jnl-formfield__label">Input--s</label>
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input--s</legend>
           <input type="text" value="Text Input" class="jnl-formfield__input--s">
-        </legend>
+        </fieldset>
 
-        <legend class="jnl-formfield">
-          <label class="jnl-formfield__label">Input--l</label>
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input--l</legend>
           <input type="text" value="Text Input" class="jnl-formfield__input--l">
-        </legend>
+        </fieldset>
 
-        <legend class="jnl-formfield">
-          <label class="jnl-formfield__label">Input--xl</label>
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input--xl</legend>
           <input type="text" value="Text Input" class="jnl-formfield__input--xl">
-        </legend>
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input, search</legend>
+          <input type="search" value="Search Input" class="jnl-formfield__input">
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input, tel</legend>
+          <input type="tel" value="Tel Input" class="jnl-formfield__input">
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input, url</legend>
+          <input type="url" value="Url Input" class="jnl-formfield__input">
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input, email</legend>
+          <input type="email" value="Email Input" class="jnl-formfield__input">
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input, password</legend>
+          <input type="password" value="Password Input" class="jnl-formfield__input">
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input, number</legend>
+          <input type="number" value="Number Input" class="jnl-formfield__input">
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input, range</legend>
+          <input type="range" value="Range Input">
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input, color</legend>
+          <input type="color" value="Color Input" class="jnl-formfield__color">
+          <datalist>
+            <option value="#000000"></option>
+            <option value="#ff0000"></option>
+            <option value="#008000"></option>
+            <option value="#0000ff"></option>
+            <option value="#ffff00"></option>
+          </datalist>
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Textarea</legend>
+          <textarea class="jnl-formfield__textarea">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Select</legend>
+          <select class="jnl-formfield__select">
+            <option value=""></option>
+            <option value="option-1st">option-1st</option>
+            <option value="option-2nd">option-2nd</option>
+            <option value="option-3rd">option-3rd</option>
+          </select>
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input Checkbox</legend>
+
+          <ul class="jnl-formfield__checkboxes">
+            <li>
+              <label class="jnl-formfield__checkbox jsc-jnl-formfield__checkbox">
+                <input type="checkbox" value="Checkbox Input">
+                <span>Checkbox Input</span>
+              </label>
+            </li>
+            <li>
+              <label class="jnl-formfield__checkbox jsc-jnl-formfield__checkbox">
+                <input type="checkbox" value="Checkbox Input">
+                <span>Checkbox Input</span>
+              </label>
+            </li>
+            <li>
+              <label class="jnl-formfield__checkbox jsc-jnl-formfield__checkbox">
+                <input type="checkbox" value="Checkbox Input">
+                <span>Checkbox Input</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input Radio</legend>
+          <ul class="jnl-formfield__radios">
+            <li>
+              <label class="jnl-formfield__radio jsc-jnl-formfield__radio">
+                <input type="radio" value="Radio Input">
+                <span>Radio Input</span>
+              </label>
+            </li>
+            <li>
+              <label class="jnl-formfield__radio jsc-jnl-formfield__radio">
+                <input type="radio" value="Radio Input">
+                <span>Radio Input</span>
+              </label>
+            </li>
+            <li>
+              <label class="jnl-formfield__radio jsc-jnl-formfield__radio">
+                <input type="radio" value="Radio Input">
+                <span>Radio Input</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="jnl-formfield">
+          <legend class="jnl-formfield__label">Input File</legend>
+          <span class="jnl-formfield__file__appearance">
+            <i class="jnl-icon">add</i> add file
+            <input type="file" value="File Input" class="jnl-formfield__file">
+          </span>
+        </fieldset>
+
+        <ul class="jnl-buttons-list">
+          <li><input type="submit" value="Submit Input" class="jnl-button"></li>
+          <li><input type="reset" value="Reset Input" class="jnl-button"></li>
+          <li><input type="button" value="Button Input" class="jnl-button"></li>
+          <li><button class="jnl-button">Button</button></li>
+        </ul>
+
+        <ul class="jnl-buttons-list">
+          <li><a class="jnl-button">Button--default</a></li>
+          <li><a class="jnl-button--primary">Button--primary</a></li>
+          <li><a class="jnl-button--secondary">Button--secondary</a></li>
+          <li><a class="jnl-button--warning">Button--warning</a></li>
+          <li><a class="jnl-button--disabled" disabled>Button--disabled</a></li>
+        </ul>
       </form>
 
-
-      <input type="search" value="Search Input" class="jnl-formfield__input">
-      <input type="tel" value="Tel Input" class="jnl-formfield__input">
-      <input type="url" value="Url Input" class="jnl-formfield__input">
-      <input type="email" value="Email Input" class="jnl-formfield__input">
-      <input type="password" value="Password Input" class="jnl-formfield__input">
-      <input type="datetime" value="Datetime Input" class="jnl-formfield__input">
-      <input type="date" value="Date Input" class="jnl-formfield__input">
-      <input type="month" value="Month Input" class="jnl-formfield__input">
-      <input type="week" value="Week Input" class="jnl-formfield__input">
-      <input type="time" value="Time Input" class="jnl-formfield__input">
-      <input type="datetime-local" value="Datetime-Local Input" class="jnl-formfield__input">
-      <input type="number" value="Number Input" class="jnl-formfield__input">
-      <input type="range" value="Range Input">
-      <input type="color" value="Color Input">
-      <input type="checkbox" value="Checkbox Input">
-      <input type="radio" value="Radio Input">
-      <input type="file" value="File Input">
-      <input type="submit" value="Submit Input" class="jnl-button">
-      <input type="image" value="Image Input" class="jnl-button">
-      <input type="reset" value="Reset Input" class="jnl-button">
-      <input type="button" value="Button Input" class="jnl-button">
-      <select>
-        <option value=""></option>
-        <option value="option-1st">option-1st</option>
-        <option value="option-2nd">option-2nd</option>
-        <option value="option-3rd">option-3rd</option>
-      </select>
-      <textarea class="jnl-formfield__input">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
-      <button class="jnl-button">Button</button>
-
-      <ul class="jnl-buttons-list">
-        <li><a class="jnl-button">Button--default</a></li>
-        <li><a class="jnl-button--primary">Button--primary</a></li>
-        <li><a class="jnl-button--secondary">Button--secondary</a></li>
-        <li><a class="jnl-button--warning">Button--warning</a></li>
-        <li><a class="jnl-button--disabled" disabled>Button--disabled</a></li>
-      </ul>
-
       <table class="jnl-table">
-        <caption>color: onwaiting=""</caption>
         <thead>
           <tr>
-            <th>color: onerror=""</th>
-            <th>color: border=""</th>
-            <td>color: class=""</td>
-            <td>color: contenteditable=""</td>
+            <th>th in thead</th>
+            <td>td in thead</td>
+            <td>td in thead</td>
+            <td>td in thead</td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>color: dir=""</th>
-            <th>color: draggable=""</th>
-            <td>color: dropzone=""</td>
-            <td>color: hidden=""</td>
+            <th>th in tbody</th>
+            <td>td in tbody</td>
+            <td>td in tbody</td>
+            <td>td in tbody</td>
           </tr>
           <tr>
-            <th>color: id=""</th>
-            <th>color: lang=""</th>
-            <td>color: role=""</td>
-            <td>color: spellcheck=""</td>
+            <th>th in tbody</th>
+            <td>td in tbody</td>
+            <td>td in tbody</td>
+            <td>td in tbody</td>
+          </tr>
+          <tr>
+            <th>th in tbody</th>
+            <td>td in tbody</td>
+            <td>td in tbody</td>
+            <td>td in tbody</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
-            <th>color: style=""</th>
-            <th>color: tabindex=""</th>
-            <td>color: title=""</td>
-            <td>color: onabort=""</td>
+            <th>th in tfoot</th>
+            <td>td in tfoot</td>
+            <td>td in tfoot</td>
+            <td>td in tfoot</td>
           </tr>
         </tfoot>
       </table>

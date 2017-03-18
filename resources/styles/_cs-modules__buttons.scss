@@ -1,0 +1,81 @@
+.jnl-button {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+  height: 35px;
+  border: 1px solid $bdcolor--normal;
+  background-color: $bgcolor--normal;
+  border-radius: $bdradius--normal;
+  line-height: 35px;
+  font-size: 14px;
+  color: $fgcolor--primary;
+  transition: background-color $duration--normal $ease-out-expo;
+
+  &:hover {
+    background-color: $bgcolor__button--hovered;
+  }
+}
+
+.jnl-button--primary {
+  @extend .jnl-button;
+  border-color: $bgcolor--primary;
+  background-color: $bgcolor--primary;
+  color: $fgcolor--darkbg;
+
+  &:hover {
+    border-color: $bgcolor__button--primary--hovered;
+    background-color: $bgcolor__button--primary--hovered;
+  }
+}
+
+.jnl-button--secondary {
+  @extend .jnl-button;
+  border-color: $bgcolor__button--secondary;
+  background-color: $bgcolor__button--secondary;
+  color: $fgcolor--darkbg;
+
+  &:hover {
+    border-color: $bgcolor__button--secondary--hovered;
+    background-color: $bgcolor__button--secondary--hovered;
+  }
+}
+
+.jnl-button--warning {
+  @extend .jnl-button;
+  border-color: $bgcolor--invalid;
+  background-color: $bgcolor--invalid;
+  color: $fgcolor--darkbg;
+
+  &:hover {
+    border-color: $bgcolor__button--warning--hovered;
+    background-color: $bgcolor__button--warning--hovered;
+  }
+}
+
+.jnl-button--disabled,
+.jnl-button--disabled:hover {
+  @extend .jnl-button;
+  cursor: default;
+  border-color: $bgcolor__button--disabled;
+  background-color: $bgcolor__button--disabled;
+  color: $fgcolor--darkbg;
+}
+
+[class^='jnl-buttons-list'] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+
+  > li {
+    margin: 0 10px;
+  }
+}
+
+.jnl-buttons-list--left {
+  justify-content: flex-start;
+}
+
+.jnl-buttons-list--right {
+  justify-content: flex-end;
+}

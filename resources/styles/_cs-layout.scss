@@ -1,0 +1,77 @@
+body {
+  background-color: #EFEFEF;
+}
+
+
+@import './_cs-layout__navigation.scss';
+@import './_cs-layout__header.scss';
+@import './_cs-layout__footer.scss';
+
+
+.jnl-layout__contents {
+  z-index: 99;
+  overflow: hidden;
+  position: absolute;
+  top: $cs-header__height;
+  right: 0;
+  bottom: $cs-footer__height;
+  left: $cs-navigation__width;
+  transition: left $duration__appearance $ease-out-expo;
+}
+
+.jnl-navigation--opened + .jnl-layout {
+  .jnl-layout__contents {
+    left: $cs-navigation__width--opened;
+  }
+}
+
+
+@import './_cs-layout__contents__pages.scss';
+@import './_cs-layout__contents__article.scss';
+
+
+.jnl-toasts {
+  z-index: 9999;
+  position: fixed;
+  top: $cs-header__height + 20px;
+  right: 20px;
+}
+
+.jnl-toast,
+[class^='jnl-toast--'] {
+  max-width: $cs-pages__list__width;
+  padding: 10px 20px;
+  border-top: 3px solid;
+  border-radius: $bdradius--normal;
+  background-color: rgba($bgcolor--normal, 0.8);
+  box-shadow: -3px 0 10px 1px rgba(51,51,51, 0.2);
+
+  .jnl-icon {
+    margin-right: 0.5em;
+  }
+}
+
+* + .jnl-toast,
+* + [class^='jnl-toast--'] {
+  margin-top: 20px;
+}
+
+.jnl-toast {
+  border-top-color: $fgcolor--midpriority;
+  color: $fgcolor--midpriority;
+}
+
+.jnl-toast--information {
+  border-top-color: $bdcolor--primary;
+  color: $fgcolor--primary;
+}
+
+.jnl-toast--success {
+  border-top-color: $bdcolor--valid;
+  color: $fgcolor--valid;
+}
+
+.jnl-toast--warning {
+  border-top-color: $bdcolor--invalid;
+  color: $fgcolor--invalid;
+}

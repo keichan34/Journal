@@ -37,6 +37,13 @@ main {
   display: block;
 }
 
+a:not(:disabled),
+input[type=button]:not(:disabled),
+input[type=submit]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 img {
   max-width: 100%;
   height: auto;

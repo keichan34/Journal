@@ -6,3 +6,9 @@ export interface EnumDef {
   name: string;
   orderNo: number;
 }
+
+export interface Durations {
+  normal: number;
+  appearance: number;
+  animation: number;
+}

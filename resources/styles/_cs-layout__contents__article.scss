@@ -1,0 +1,64 @@
+.jnl-layout__contents__article {
+  z-index: 999;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 850px;
+  background-color: #F6F6F6;
+  box-shadow: -3px 0 10px 1px rgba(51,51,51,.2);
+  transition: left $duration__animation $ease-out-expo;
+}
+
+.jnl-layout__contents__article__headline {
+  @extend .jnl-layout__contents__pages__headline;
+
+  .jnl-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $cs-pages__list__text-height;
+    height: $cs-pages__list__text-height;
+    line-height: $cs-pages__list__text-height;
+    text-align: center;
+    transition: background-color $duration--normal $ease-out-expo;
+
+    &:hover {
+      background-color: #F4F6F8;
+    }
+  }
+}
+
+.jnl-layout__contents__article__sections {
+  padding: 20px;
+  border-top: 1px solid $bdcolor--normal;
+}
+
+.jnl-layout__contents__article__sections__headline {
+  height: $cs-pages__list__text-height;
+  border-bottom: 1px solid $bdcolor--normal;
+}
+
+.jnl-layout__contents__article__sections__section {
+  padding: 0 20px 20px;
+  border: 1px solid $bdcolor--normal;
+  background-color: $bgcolor--normal;
+
+  > * + * {
+    margin-top: 1rem;
+  }
+}
+
+* + .jnl-layout__contents__article__sections__section {
+  margin-top: 20px;
+}
+
+.jnl-layout__contents__article__sections__section__headline {
+  @extend .jnl-layout__contents__pages__headline;
+  margin-bottom: 20px;
+  padding-right: 0;
+  padding-left: 0;
+  border-bottom: 1px solid $bdcolor--normal;
+}

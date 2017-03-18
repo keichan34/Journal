@@ -1,0 +1,191 @@
+.jnl-layout__contents__pages {
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: $cs-pages__list__width;
+  height: auto;
+  background-color: #F6F6F6;
+  box-shadow: -3px 0 10px 1px rgba(51,51,51, 0.2);
+  transition: left $duration__animation $ease-out-expo;
+}
+
+.jnl-layout__contents__pages__headline,
+.jnl-layout__contents__pages__list__headline {
+  position: relative;
+  height: $cs-pages__list__text-height;
+  padding: 0 15px;
+  background-color: $bgcolor--normal;
+  line-height: $cs-pages__list__text-height;
+  font-size: 16px;
+  color: $fgcolor--primary;
+
+  .jnl-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $cs-pages__list__text-height;
+    height: $cs-pages__list__text-height;
+    line-height: $cs-pages__list__text-height;
+    text-align: center;
+    transition: background-color $duration--normal $ease-out-expo;
+
+    &:hover {
+      background-color: #F4F6F8;
+    }
+  }
+
+  + * {
+    margin-top: 0 !important;
+  }
+}
+
+.jnl-layout__contents__pages__toolbar,
+[class^='jnl-layout__contents__pages__toolbar--'] {
+  display: flex;
+  height: $cs-pages__list__text-height;
+  background-color: #EDF1F4;
+  transition: background-color $duration--normal $ease-out-expo;
+
+  > a,
+  > button {
+    cursor: pointer;
+    min-width: $cs-navigation__width;
+    padding: 0 15px;
+    white-space: nowrap;
+    font-size: 14px;
+    color: $fgcolor--primary;
+
+    &:hover {
+      background-color: #F4F6F8;
+    }
+  }
+}
+
+.jnl-layout__contents__pages__toolbar--center {
+  justify-content: center;
+}
+
+.jnl-layout__contents__pages__toolbar--right {
+  justify-content: flex-end;
+}
+
+.jnl-layout__contents__pages__search {
+  display: block;
+  position: relative;
+
+  > .jnl-icon {
+    position: absolute;
+    top: 14px;
+    left: 8px;
+    color: $fgcolor--lowpriority;
+  }
+
+  > input {
+    display: block;
+    width: 100%;
+    height: $cs-pages__list__text-height;
+    padding-right: 10px;
+    padding-left: 38px;
+    border: 1px solid rgba($bdcolor--primary, 0);
+    line-height: $cs-pages__list__text-height;
+    font-size: 14px;
+    transition:
+      border-color $duration--normal $ease-out-expo,
+      background-color $duration--normal $ease-out-expo;
+
+    &:focus {
+      border-color: rgba($bdcolor--primary, 1);
+      background-color: $bgcolor--normal;
+    }
+  }
+}
+
+.jnl-layout__contents__pages__list,
+.jnl-layout__contents__items {
+  background-color: $bgcolor--normal;
+
+  a {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    transition: background-color $duration--normal $ease-out-expo;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background-color: #EBF2F6;
+    }
+
+    > .jnl-icon {
+      position: absolute;
+      top: 14px;
+      right: 4px;
+    }
+  }
+}
+
+.jnl-layout__contents__pages__list {
+  border-top: 1px solid $bdcolor--normal;
+
+  a {
+    height: $cs-pages__list__text-height;
+    padding-right: 30px;
+    padding-left: 26px;
+    line-height: $cs-pages__list__text-height;
+    color: $fgcolor--primary;
+  }
+}
+
+.jnl-layout__contents__items {
+  a {
+    padding: 10px 15px;
+    border-top: 1px solid $bdcolor--normal;
+  }
+}
+
+[class^='jnl-layout__contents__items__label'] {
+  padding: 2px 4px;
+  border: 1px solid;
+  border-radius: $bdradius--normal;
+  font-size: 12px;
+}
+
+.jnl-layout__contents__items__label {
+  border-color: $fgcolor--midpriority;
+  color: $fgcolor--midpriority;
+}
+
+.jnl-layout__contents__items__label--primary {
+  border-color: $bdcolor--primary;
+  color: $fgcolor--primary;
+}
+
+.jnl-layout__contents__items__label--invalid {
+  border-color: $bdcolor--invalid;
+  color: $fgcolor--invalid;
+}
+
+.jnl-layout__contents__items__label--success {
+  border-color: $bdcolor--valid;
+  color: $fgcolor--valid;
+}
+
+.jnl-layout__contents__items__title,
+.jnl-layout__contents__items__description {
+  display: block;
+}
+
+.jnl-layout__contents__items__title {
+  font-weight: bold;
+  color: $fgcolor--normal;
+}
+
+.jnl-layout__contents__items__description {
+  overflow: hidden;
+  white-space: nowrap;
+  color: $fgcolor--midpriority;
+  text-overflow: ellipsis;
+}
