@@ -15,15 +15,1381 @@
 
 <header>
   <h1>Journal - Modern UI framework. It makes your users inquisitive and curious, then seeking.</h1>
+  <figure>
+    <i class="jnl-icon">view_column</i>
+    <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</figcaption>
+  </figure>
+
+  <nav>
+    <ul>
+      <li><a>...</a></li>
+      <li><a>...</a></li>
+      <li><a>...</a></li>
+      <li><a>...</a></li>
+      <li><a>...</a></li>
+      <li><a>...</a></li>
+      <li><a>...</a></li>
+      <li><a>...</a></li>
+      <li><a>...</a></li>
+      <li><a>...</a></li>
+    </ul>
+
+    <ul>
+      <li><a>Download via Github</a></li>
+      <li><a>Install via NPM</a></li>
+    </ul>
+  </nav>
 </header>
 
 
-<main>
+<link rel="stylesheet" href="./assets/styles/page.css">
 
+<main>
+  <article>
+    <section>
+      <h2>Concept</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
+
+    <section>
+      <h2>Getting Started / Demonstration</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>You can check the demonstration with <a href="/demo">here</a>.</p>
+    </section>
+
+    <section>
+      <h2>Layout</h2>
+
+      <section>
+        <h3>Side Navigation <strong>* Required</strong></h3>
+        <p>Left navigation with Open / Close toggle available. You can set any static links. Demonstration is <a href="/demo">here</a>.</p>
+
+        <pre>
+          <code>
+&lt;nav id=&#34;jsi-jnl-navigation&#34; class=&#34;jnl-navigation&#34;&gt;
+  &lt;h1 id=&#34;jsi-jnl-navigation__trigger&#34; class=&#34;jnl-navigation__title&#34;&gt;Lorem Ipsum&lt;/h1&gt;
+
+  &lt;ul class=&#34;jnl-navigation__list&#34;&gt;
+
+    &lt;!-- &#39;jnl-navigation__list&#39; or &#39;jnl-navigation__list--bottom&#39; available. --&gt;
+    &lt;li class=&#34;jnl-navigation__list__item&#34;&gt;
+      &lt;a href=&#34;#&#34;&gt;
+        &lt;i class=&#34;jnl-icon jnl-icon--darkbg&#34;&gt;account_box&lt;/i&gt;
+        &lt;span&gt;Menu 1&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+
+    &lt;li class=&#34;jnl-navigation__list__item&#34;&gt;
+      &lt;a href=&#34;#&#34;&gt;
+        &lt;i class=&#34;jnl-icon jnl-icon--darkbg&#34;&gt;book&lt;/i&gt;
+        &lt;span&gt;Menu 2&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+
+    &lt;li class=&#34;jnl-navigation__list__item&#34;&gt;
+      &lt;a href=&#34;#&#34;&gt;
+        &lt;i class=&#34;jnl-icon jnl-icon--darkbg&#34;&gt;code&lt;/i&gt;
+        &lt;span&gt;Menu 3&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;!-- &#39;--bottom&#39; class would be set it the bottom on navigation. --&gt;
+  &lt;ul class=&#34;jnl-navigation__list--bottom&#34;&gt;
+    &lt;li class=&#34;jnl-navigation__list__item&#34;&gt;
+      &lt;a href=&#34;#&#34;&gt;
+        &lt;i class=&#34;jnl-icon jnl-icon--darkbg&#34;&gt;zoom_in&lt;/i&gt;
+        &lt;span&gt;Menu 99&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Header<strong>* Required</strong></h3>
+        <p>White header. You can set any static links. Demonstration is <a href="/demo">here</a>.</p>
+
+        <pre>
+          <code>
+&lt;header class=&#34;jnl-layout__header&#34;&gt;
+
+  &lt;!-- &#39;jnl-layout__header__list&#39; or &#39;jnl-layout__header__list--right&#39; available. --&gt;
+  &lt;ul class=&#34;jnl-layout__header__list&#34;&gt;
+    &lt;li class=&#34;jnl-layout__header__list__item&#34;&gt;
+      &lt;a href=&#34;#&#34;&gt;
+        &lt;i class=&#34;jnl-icon&#34;&gt;account_box&lt;/i&gt;
+        &lt;span&gt;Menu 1&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+
+    &lt;li class=&#34;jnl-layout__header__list__item&#34;&gt;
+      &lt;a href=&#34;#&#34;&gt;
+        &lt;i class=&#34;jnl-icon&#34;&gt;book&lt;/i&gt;
+        &lt;span&gt;Menu 2&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+
+    &lt;li class=&#34;jnl-layout__header__list__item&#34;&gt;
+      &lt;a href=&#34;#&#34;&gt;
+        &lt;i class=&#34;jnl-icon&#34;&gt;code&lt;/i&gt;
+        &lt;span&gt;Menu 3&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;!-- &#39;--right&#39; class would be set it the right on header. --&gt;
+  &lt;ul class=&#34;jnl-layout__header__list--right&#34;&gt;
+    &lt;li class=&#34;jnl-layout__header__list__item&#34;&gt;
+      &lt;a href=&#34;#&#34;&gt;
+        &lt;i class=&#34;jnl-icon&#34;&gt;zoom_in&lt;/i&gt;
+        &lt;span&gt;Menu 99&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/header&gt;
+
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Footer <span>Optional</span></h3>
+        <p>Blue Footer. You can set any static links. Demonstration is <a href="/demo">here</a>.</p>
+
+        <pre>
+          <code>
+&lt;!-- &#39;jnl-layout__footer&#39; or &#39;jnl-layout__footer--center&#39; or &#39;jnl-layout__footer--right&#39; available. --&gt;
+&lt;footer class=&#34;jnl-layout__footer--right&#34;&gt;
+  &lt;nav&gt;
+    &lt;ul class=&#34;jnl-layout__footer__list&#34;&gt;
+      &lt;li class=&#34;jnl-layout__footer__list__item&#34;&gt;
+        &lt;a href=&#34;#&#34;&gt;Lorem ipsum&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&#34;jnl-layout__footer__list__item&#34;&gt;
+        &lt;a href=&#34;#&#34;&gt;Dolor sit amet&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&#34;jnl-layout__footer__list__item&#34;&gt;
+        &lt;a href=&#34;#&#34;&gt;Consectetur adipisicing elit&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/footer&gt;
+
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Panes <strong>* At least 1 required</strong></h3>
+        <p>Pages list, items list, 850-width contents page available. Demonstration is <a href="/demo">here</a>.</p>
+
+        <pre>
+          <code>
+&lt;div class=&#34;jnl-layout__contents__pages jsc-jnl-layout__pane&#34;&gt;
+  &lt;h2 class=&#34;jnl-layout__contents__pages__headline&#34;&gt;Lorem ipsum&lt;/h2&gt;
+
+  &lt;menu class=&#34;jnl-layout__contents__pages__toolbar&#34;&gt;
+    &lt;button&gt;Foo&lt;/button&gt;
+    &lt;button&gt;Bar&lt;/button&gt;
+    &lt;button&gt;Buz&lt;/button&gt;
+  &lt;/menu&gt;
+
+  &lt;div class=&#34;jnl-layout__contents__pages__list jsc-jnl-layout__contents__pages__list&#34;&gt;
+    &lt;h3 class=&#34;jnl-layout__contents__pages__list__headline&#34;&gt;Lorem Ipsum&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;!-- &#39;data-pene-href&#39; property is related to &#39;data-pane-target&#39; property. --&gt;
+      &lt;li&gt;&lt;a data-pane-href=&#34;demo-pane-second&#34;&gt;Lorem ipsum&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a data-pane-href=&#34;demo-pane-second&#34;&gt;Dolor sit amet&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a data-pane-href=&#34;demo-pane-third&#34;&gt;Consectetur adipisicing&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+          </code>
+        </pre>
+
+        <pre>
+          <code>
+&lt;!-- &#39;data-pene-target&#39; property would be called from &#39;data-pane-href&#39; property. --&gt;
+&lt;div data-pane-target=&#34;demo-pane-second&#34; class=&#34;jnl-layout__contents__pages jsc-jnl-layout__pane&#34;&gt;
+  &lt;h2 class=&#34;jnl-layout__contents__pages__headline jsc-layout__pane__headline&#34;&gt;Lorem ipsum&lt;/h2&gt;
+
+  &lt;menu class=&#34;jnl-layout__contents__pages__toolbar&#34;&gt;
+    &lt;button&gt;Foo&lt;/button&gt;
+    &lt;button&gt;Bar&lt;/button&gt;
+    &lt;button&gt;Buz&lt;/button&gt;
+  &lt;/menu&gt;
+  &lt;label class=&#34;jnl-layout__contents__pages__search&#34;&gt;
+    &lt;i class=&#34;jnl-icon&#34;&gt;search&lt;/i&gt;
+    &lt;!-- &#39;data-search-ref&#39; property is related to &#39;data-search-target&#39; property. --&gt;
+    &lt;input type=&#34;text&#34; placeholder=&#34;Type keywords...&#34; data-search-ref=&#34;demo-items&#34;&gt;
+  &lt;/label&gt;
+
+  &lt;div class=&#34;jnl-layout__contents__items&#34;&gt;
+    &lt;!-- &#39;data-search-target&#39; property would called by to &#39;data-search-ref&#39; property. --&gt;
+    &lt;ul data-search-target=&#34;demo-items&#34;&gt;
+      &lt;!-- &#39;data-pene-href&#39; property is related to &#39;data-pane-target&#39; property. --&gt;
+      &lt;li&gt;&lt;a data-pane-href=&#34;demo-pane-third&#34;&gt;
+        &lt;label class=&#34;jnl-layout__contents__items__label&#34;&gt;Lorem&lt;/label&gt;
+        &lt;strong class=&#34;jnl-layout__contents__items__title&#34;&gt;Elit sed do&lt;/strong&gt;
+        &lt;small class=&#34;jnl-layout__contents__items__description&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/small&gt;
+      &lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a data-pane-href=&#34;demo-pane-third&#34;&gt;
+        &lt;!-- &#39;jnl-layout__contents__items__label&#39; or &#39;jnl-layout__contents__items__label--primary&#39; or &#39;jnl-layout__contents__items__label--success&#39; or &#39;jnl-layout__contents__items__label--warning&#39; available. --&gt;
+        &lt;label class=&#34;jnl-layout__contents__items__label--primary&#34;&gt;Ipsum&lt;/label&gt;
+        &lt;label class=&#34;jnl-layout__contents__items__label--invalid&#34;&gt;Dolor&lt;/label&gt;
+        &lt;label class=&#34;jnl-layout__contents__items__label--success&#34;&gt;Sitamet&lt;/label&gt;
+        &lt;strong class=&#34;jnl-layout__contents__items__title&#34;&gt;Eiusmod tempor&lt;/strong&gt;
+        &lt;small class=&#34;jnl-layout__contents__items__description&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/small&gt;
+      &lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a data-pane-href=&#34;demo-pane-third&#34;&gt;
+        &lt;strong class=&#34;jnl-layout__contents__items__title&#34;&gt;Incididunt ut labore&lt;/strong&gt;
+        &lt;small class=&#34;jnl-layout__contents__items__description&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/small&gt;
+      &lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+          </code>
+        </pre>
+
+        <pre>
+          <code>
+&lt;!-- &#39;data-pene-target&#39; property would be called from &#39;data-pane-href&#39; property. --&gt;
+&lt;article data-pane-target=&#34;demo-pane-third&#34; class=&#34;jnl-layout__contents__article jsc-jnl-layout__pane&#34;&gt;
+  &lt;h2 class=&#34;jnl-layout__contents__article__headline jsc-layout__pane__headline&#34;&gt;Lorem ipsum dolor sit amet&lt;/h2&gt;
+
+  &lt;div class=&#34;jnl-layout__contents__article__sections&#34;&gt;
+    &lt;section class=&#34;jnl-layout__contents__article__sections__section&#34;&gt;
+      &lt;h3 class=&#34;jnl-layout__contents__article__sections__section__headline&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/h3&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+          </code>
+        </pre>
+      </section>
+    </section>
+
+    
+
+    <section>
+      <h2>Styles</h2>
+
+      <section>
+        <h3>Typography</h3>
+
+        <table class="jnl-table">
+          
+      <thead>
+        <tr>
+          <th>Examples</th>
+          <td></td>
+        </tr>
+      </thead>
+    
+          <tbody>
+            
+            <tr>
+              <th>h1</th>
+              <td>
+                <h1>The quick brown fox jumps over the lazy dog</h1>
+              </td>
+            </tr>
+            
+            <tr>
+              <th>h2</th>
+              <td>
+                <h2>The quick brown fox jumps over the lazy dog</h2>
+              </td>
+            </tr>
+            
+            <tr>
+              <th>h3</th>
+              <td>
+                <h3>The quick brown fox jumps over the lazy dog</h3>
+              </td>
+            </tr>
+            
+            <tr>
+              <th>h4</th>
+              <td>
+                <h4>The quick brown fox jumps over the lazy dog</h4>
+              </td>
+            </tr>
+            
+            <tr>
+              <th>h5</th>
+              <td>
+                <h5>The quick brown fox jumps over the lazy dog</h5>
+              </td>
+            </tr>
+            
+            <tr>
+              <th>h6</th>
+              <td>
+                <h6>The quick brown fox jumps over the lazy dog</h6>
+              </td>
+            </tr>
+            
+            <tr>
+              <th>p</th>
+              <td>
+                <p>The quick brown fox jumps over the lazy dog</p>
+              </td>
+            </tr>
+            
+            <tr>
+              <th>strong</th>
+              <td>
+                <strong>The quick brown fox jumps over the lazy dog</strong>
+              </td>
+            </tr>
+            
+            <tr>
+              <th>em</th>
+              <td>
+                <em>The quick brown fox jumps over the lazy dog</em>
+              </td>
+            </tr>
+            
+            <tr>
+              <th>small</th>
+              <td>
+                <small>The quick brown fox jumps over the lazy dog</small>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Icons</h3>
+        <p>You can use all of icons in <a href="https://material.io/icons/" rel="nofollow" target="_blank">Material Icons by Google MATERIAL DESIGN</a>. You can change color / size as you like via CSS.</p>
+
+        <table class="jnl-table">
+          
+      <thead>
+        <tr>
+          <th>Examples</th>
+          <td></td>
+        </tr>
+      </thead>
+    
+          <tbody>
+            
+              <tr>
+                <th>
+                  <i class="jnl-icon jnl-font--primary" style="font-size: 50px;">attachment</i>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;i class=&#34;jnl-icon&#34;&gt;attachment&lt;/i&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  <i class="jnl-icon jnl-font--primary" style="font-size: 50px;">cloud</i>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;i class=&#34;jnl-icon&#34;&gt;cloud&lt;/i&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  <i class="jnl-icon jnl-font--primary" style="font-size: 50px;">file_download</i>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;i class=&#34;jnl-icon&#34;&gt;file_download&lt;/i&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  <i class="jnl-icon jnl-font--primary" style="font-size: 50px;">file_upload</i>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;i class=&#34;jnl-icon&#34;&gt;file_upload&lt;/i&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  <i class="jnl-icon jnl-font--primary" style="font-size: 50px;">folder</i>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;i class=&#34;jnl-icon&#34;&gt;folder&lt;/i&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Colours</h3>
+        <table class="jnl-table">
+          
+      <thead>
+        <tr>
+          <th>Examples</th>
+          <td></td>
+        </tr>
+      </thead>
+    
+          <tbody>
+            
+              <tr>
+                
+                  <th>
+                
+                  This is normal.
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;p&gt;
+  This is normal
+&lt;/p&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                
+                  <th class="jnl-font--midpriority">
+                
+                  This is midpriority.
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;p class=&#34;jnl-font--midpriority&#34;&gt;
+  This is mid-priority
+&lt;/p&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                
+                  <th class="jnl-font--lowpriority">
+                
+                  This is lowpriority.
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;p class=&#34;jnl-font--lowpriority&#34;&gt;
+  This is low-priority
+&lt;/p&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                
+                  <th class="jnl-font--primary">
+                
+                  This is primary.
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;p class=&#34;jnl-font--primary&#34;&gt;
+  This is primary
+&lt;/p&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                
+                  <th class="jnl-font--success">
+                
+                  This is success.
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;p class=&#34;jnl-font--success&#34;&gt;
+  This is success
+&lt;/p&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                
+                  <th class="jnl-font--warning">
+                
+                  This is warning.
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;p class=&#34;jnl-font--warning&#34;&gt;
+  This is warning
+&lt;/p&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Buttons</h3>
+        <table class="jnl-table">
+          
+      <thead>
+        <tr>
+          <th>Examples</th>
+          <td></td>
+        </tr>
+      </thead>
+    
+          <tbody>
+            
+              <tr>
+                <th>
+                  
+                    <button class="jnl-button">
+                  
+                    This is default button.
+                  </button>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;button class=&#34;jnl-button&#34;&gt;
+  This is default button.
+&lt;/button&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  
+                    <button class="jnl-button--primary">
+                  
+                    This is primary button.
+                  </button>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;button class=&#34;jnl-button--primary&#34;&gt;
+  This is primary button.
+&lt;/button&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  
+                    <button class="jnl-button--warning">
+                  
+                    This is warning button.
+                  </button>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;button class=&#34;jnl-button--warning&#34;&gt;
+  This is warning button.
+&lt;/button&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  
+                    <button class="jnl-button--disabled">
+                  
+                    This is disabled button.
+                  </button>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+&lt;button class=&#34;jnl-button--disabled&#34;&gt;
+  This is disabled button.
+&lt;/button&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        <p>Whereever you can set buttons horizontaly with <code>jnl-buttons-list</code> class.</p>
+
+        <table class="jnl-table">
+          <tbody>
+            <tr>
+              <th>
+                <ul class="jnl-buttons-list">
+                  
+                    <li><button class="jnl-button">This is default button.</button></li>
+                  
+                    <li><button class="jnl-button">This is default button.</button></li>
+                  
+                    <li><button class="jnl-button">This is default button.</button></li>
+                  
+                </ul>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+                  <code>
+&lt;ul class=&#34;jnl-buttons-list&#34;&gt;
+  &lt;li&gt;&lt;button class=&#34;jnl-button&#34;&gt;This is default button.&lt;/button&gt;&lt;/li&gt;&lt;li&gt;&lt;button class=&#34;jnl-button&#34;&gt;This is default button.&lt;/button&gt;&lt;/li&gt;&lt;li&gt;&lt;button class=&#34;jnl-button&#34;&gt;This is default button.&lt;/button&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                  </code>
+                </pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Form Field - Text Fields</h3>
+        <table class="jnl-table">
+          
+      <thead>
+        <tr>
+          <th>Examples</th>
+          <td></td>
+        </tr>
+      </thead>
+    
+          <tbody>
+            
+              <tr>
+                <td>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Input, default</legend>
+                    <input type="text" value="Text Input" class="jnl-formfield__input">
+                  </fieldset>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Input, default&lt;/legend&gt;
+  &lt;input type=&#34;text&#34; value=&#34;Text Input&#34; class=&#34;jnl-formfield__input&#34;&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Input, --s</legend>
+                    <input type="text" value="Text Input" class="jnl-formfield__input--s">
+                  </fieldset>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Input, --s&lt;/legend&gt;
+  &lt;input type=&#34;text&#34; value=&#34;Text Input&#34; class=&#34;jnl-formfield__input--s&#34;&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Input, --l</legend>
+                    <input type="text" value="Text Input" class="jnl-formfield__input--l">
+                  </fieldset>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Input, --l&lt;/legend&gt;
+  &lt;input type=&#34;text&#34; value=&#34;Text Input&#34; class=&#34;jnl-formfield__input--l&#34;&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Input, --xl</legend>
+                    <input type="text" value="Text Input" class="jnl-formfield__input--xl">
+                  </fieldset>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Input, --xl&lt;/legend&gt;
+  &lt;input type=&#34;text&#34; value=&#34;Text Input&#34; class=&#34;jnl-formfield__input--xl&#34;&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Form Field - Textarea</h3>
+        <table class="jnl-table">
+          
+      <thead>
+        <tr>
+          <th>Examples</th>
+          <td></td>
+        </tr>
+      </thead>
+    
+          <tbody>
+            
+              <tr>
+                <th>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Textarea</legend>
+                    <textarea class="jnl-formfield__textarea">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+                  </fieldset>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Textarea&lt;/legend&gt;
+  &lt;textarea class=&#34;jnl-formfield__textarea&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/textarea&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Textarea--s</legend>
+                    <textarea class="jnl-formfield__textarea--s">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+                  </fieldset>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Textarea--s&lt;/legend&gt;
+  &lt;textarea class=&#34;jnl-formfield__textarea--s&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/textarea&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Textarea--l</legend>
+                    <textarea class="jnl-formfield__textarea--l">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+                  </fieldset>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Textarea--l&lt;/legend&gt;
+  &lt;textarea class=&#34;jnl-formfield__textarea--l&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/textarea&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Textarea--xl</legend>
+                    <textarea class="jnl-formfield__textarea--xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+                  </fieldset>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Textarea--xl&lt;/legend&gt;
+  &lt;textarea class=&#34;jnl-formfield__textarea--xl&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/textarea&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Form Field - Selectbox</h3>
+        <table class="jnl-table">
+          
+      <thead>
+        <tr>
+          <th>Examples</th>
+          <td></td>
+        </tr>
+      </thead>
+    
+          <tbody>
+            
+              <tr>
+                <th>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Select</legend>
+                    <span class="jnl-formfield__select jsc-jnl-formfield__select">
+                      <select>
+                        <option value=""></option>
+                        <option value="option-1st">option-1st</option>
+                        <option value="option-2nd">option-2nd</option>
+                        <option value="option-3rd">option-3rd</option>
+                      </select>
+                    </span>
+                  </fieldset>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Select&lt;/legend&gt;
+
+  &lt;!-- &lt;select&gt; tag is needed to wrapped by &lt;span class=&#34;...&#34;&gt;&lt;/span&gt; the below. --&gt;
+  &lt;span class=&#34;jnl-formfield__select jsc-jnl-formfield__select&#34;&gt;
+    &lt;select&gt;
+      &lt;option value=&#34;&#34;&gt;&lt;/option&gt;
+      &lt;option value=&#34;option-1st&#34;&gt;option-1st&lt;/option&gt;
+      &lt;option value=&#34;option-2nd&#34;&gt;option-2nd&lt;/option&gt;
+      &lt;option value=&#34;option-3rd&#34;&gt;option-3rd&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/span&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Select</legend>
+                    <span class="jnl-formfield__select--s jsc-jnl-formfield__select">
+                      <select>
+                        <option value=""></option>
+                        <option value="option-1st">option-1st</option>
+                        <option value="option-2nd">option-2nd</option>
+                        <option value="option-3rd">option-3rd</option>
+                      </select>
+                    </span>
+                  </fieldset>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Select&lt;/legend&gt;
+
+  &lt;!-- &lt;select&gt; tag is needed to wrapped by &lt;span class=&#34;...&#34;&gt;&lt;/span&gt; the below. --&gt;
+  &lt;span class=&#34;jnl-formfield__select--s jsc-jnl-formfield__select&#34;&gt;
+    &lt;select&gt;
+      &lt;option value=&#34;&#34;&gt;&lt;/option&gt;
+      &lt;option value=&#34;option-1st&#34;&gt;option-1st&lt;/option&gt;
+      &lt;option value=&#34;option-2nd&#34;&gt;option-2nd&lt;/option&gt;
+      &lt;option value=&#34;option-3rd&#34;&gt;option-3rd&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/span&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Select</legend>
+                    <span class="jnl-formfield__select--l jsc-jnl-formfield__select">
+                      <select>
+                        <option value=""></option>
+                        <option value="option-1st">option-1st</option>
+                        <option value="option-2nd">option-2nd</option>
+                        <option value="option-3rd">option-3rd</option>
+                      </select>
+                    </span>
+                  </fieldset>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Select&lt;/legend&gt;
+
+  &lt;!-- &lt;select&gt; tag is needed to wrapped by &lt;span class=&#34;...&#34;&gt;&lt;/span&gt; the below. --&gt;
+  &lt;span class=&#34;jnl-formfield__select--l jsc-jnl-formfield__select&#34;&gt;
+    &lt;select&gt;
+      &lt;option value=&#34;&#34;&gt;&lt;/option&gt;
+      &lt;option value=&#34;option-1st&#34;&gt;option-1st&lt;/option&gt;
+      &lt;option value=&#34;option-2nd&#34;&gt;option-2nd&lt;/option&gt;
+      &lt;option value=&#34;option-3rd&#34;&gt;option-3rd&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/span&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+              <tr>
+                <th>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Select</legend>
+                    <span class="jnl-formfield__select--xl jsc-jnl-formfield__select">
+                      <select>
+                        <option value=""></option>
+                        <option value="option-1st">option-1st</option>
+                        <option value="option-2nd">option-2nd</option>
+                        <option value="option-3rd">option-3rd</option>
+                      </select>
+                    </span>
+                  </fieldset>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Select&lt;/legend&gt;
+
+  &lt;!-- &lt;select&gt; tag is needed to wrapped by &lt;span class=&#34;...&#34;&gt;&lt;/span&gt; the below. --&gt;
+  &lt;span class=&#34;jnl-formfield__select--xl jsc-jnl-formfield__select&#34;&gt;
+    &lt;select&gt;
+      &lt;option value=&#34;&#34;&gt;&lt;/option&gt;
+      &lt;option value=&#34;option-1st&#34;&gt;option-1st&lt;/option&gt;
+      &lt;option value=&#34;option-2nd&#34;&gt;option-2nd&lt;/option&gt;
+      &lt;option value=&#34;option-3rd&#34;&gt;option-3rd&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/span&gt;
+&lt;/fieldset&gt;
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Form Field - Checkboxes / Radio Buttons</h3>
+
+        <table class="jnl-table">
+          
+      <thead>
+        <tr>
+          <th>Examples</th>
+          <td></td>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+              <td>
+                <fieldset class="jnl-formfield">
+                  <legend class="jnl-formfield__label">Input Checkbox</legend>
+
+                  <ul class="jnl-formfield__checkboxes">
+                    
+                      <li>
+                        <label class="jnl-formfield__checkbox jsc-jnl-formfield__checkbox">
+                          <input type="checkbox" value="Checkbox Input">
+                          <span>Checkbox Input</span>
+                        </label>
+                      </li>
+                    
+                      <li>
+                        <label class="jnl-formfield__checkbox jsc-jnl-formfield__checkbox">
+                          <input type="checkbox" value="Checkbox Input">
+                          <span>Checkbox Input</span>
+                        </label>
+                      </li>
+                    
+                      <li>
+                        <label class="jnl-formfield__checkbox jsc-jnl-formfield__checkbox">
+                          <input type="checkbox" value="Checkbox Input">
+                          <span>Checkbox Input</span>
+                        </label>
+                      </li>
+                    
+                  </ul>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+                  <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Input Checkbox&lt;/legend&gt;
+
+  &lt;ul class=&#34;jnl-formfield__checkboxes&#34;&gt;
+    
+    &lt;li&gt;
+      &lt;label class=&#34;jnl-formfield__checkbox jsc-jnl-formfield__checkbox&#34;&gt;
+        &lt;input type=&#34;checkbox&#34; value=&#34;Checkbox Input&#34;&gt;
+        &lt;span&gt;Checkbox Input&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/li&gt;
+    
+    &lt;li&gt;
+      &lt;label class=&#34;jnl-formfield__checkbox jsc-jnl-formfield__checkbox&#34;&gt;
+        &lt;input type=&#34;checkbox&#34; value=&#34;Checkbox Input&#34;&gt;
+        &lt;span&gt;Checkbox Input&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/li&gt;
+    
+    &lt;li&gt;
+      &lt;label class=&#34;jnl-formfield__checkbox jsc-jnl-formfield__checkbox&#34;&gt;
+        &lt;input type=&#34;checkbox&#34; value=&#34;Checkbox Input&#34;&gt;
+        &lt;span&gt;Checkbox Input&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/li&gt;
+    
+  &lt;/ul&gt;
+&lt;/fieldset&gt;
+                  </code>
+                </pre>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <fieldset class="jnl-formfield">
+                  <legend class="jnl-formfield__label">Input Radio</legend>
+
+                  <ul class="jnl-formfield__radios">
+                    
+                      <li>
+                        <label class="jnl-formfield__radio jsc-jnl-formfield__radio">
+                          <input type="radio" value="Radio Input">
+                          <span>Radio Input</span>
+                        </label>
+                      </li>
+                    
+                      <li>
+                        <label class="jnl-formfield__radio jsc-jnl-formfield__radio">
+                          <input type="radio" value="Radio Input">
+                          <span>Radio Input</span>
+                        </label>
+                      </li>
+                    
+                      <li>
+                        <label class="jnl-formfield__radio jsc-jnl-formfield__radio">
+                          <input type="radio" value="Radio Input">
+                          <span>Radio Input</span>
+                        </label>
+                      </li>
+                    
+                  </ul>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+                  <code>
+&lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+  &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Input Radio&lt;/legend&gt;
+
+  &lt;ul class=&#34;jnl-formfield__radios&#34;&gt;
+    
+    &lt;li&gt;
+      &lt;label class=&#34;jnl-formfield__radio jsc-jnl-formfield__radio&#34;&gt;
+        &lt;input type=&#34;radio&#34; value=&#34;Radio Input&#34;&gt;
+        &lt;span&gt;Radio Input&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/li&gt;
+    
+    &lt;li&gt;
+      &lt;label class=&#34;jnl-formfield__radio jsc-jnl-formfield__radio&#34;&gt;
+        &lt;input type=&#34;radio&#34; value=&#34;Radio Input&#34;&gt;
+        &lt;span&gt;Radio Input&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/li&gt;
+    
+    &lt;li&gt;
+      &lt;label class=&#34;jnl-formfield__radio jsc-jnl-formfield__radio&#34;&gt;
+        &lt;input type=&#34;radio&#34; value=&#34;Radio Input&#34;&gt;
+        &lt;span&gt;Radio Input&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/li&gt;
+    
+  &lt;/ul&gt;
+&lt;/fieldset&gt;
+                  </code>
+                </pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Form Field - File Attachment</h3>
+        <table class="jnl-table">
+          
+      <thead>
+        <tr>
+          <th>Examples</th>
+          <td></td>
+        </tr>
+      </thead>
+    
+          <tbody>
+            <tr>
+              <th>
+                <fieldset class="jnl-formfield">
+                  <legend class="jnl-formfield__label">Input File</legend>
+                  <span class="jnl-formfield__file__appearance">
+                    <input type="file" value="File Input" class="jnl-formfield__file jsc-jnl-formfield__file__input">
+                    <span class="jsc-jnl-formfield__file__text"><i class="jnl-icon">add</i> add file</span>
+                  </span>
+                </fieldset>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+                  <code>
+  &lt;fieldset class=&#34;jnl-formfield&#34;&gt;
+    &lt;legend class=&#34;jnl-formfield__label&#34;&gt;Input File&lt;/legend&gt;
+    &lt;span class=&#34;jnl-formfield__file__appearance&#34;&gt;
+      &lt;input type=&#34;file&#34; value=&#34;File Input&#34; class=&#34;jnl-formfield__file jsc-jnl-formfield__file__input&#34;&gt;
+      &lt;span class=&#34;jsc-jnl-formfield__file__text&#34;&gt;&lt;i class=&#34;jnl-icon&#34;&gt;add&lt;/i&gt; add file&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/fieldset&gt;
+                  </code>
+                </pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Table</h3>
+
+        <table class="jnl-table">
+          <thead>
+            <tr>
+              <th>th in thead</th>
+              <td>td in thead</td>
+              <td>td in thead</td>
+              <td>td in thead</td>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <th>th in tbody</th>
+                <td>td in tbody</td>
+                <td>td in tbody</td>
+                <td>td in tbody</td>
+              </tr>
+            
+              <tr>
+                <th>th in tbody</th>
+                <td>td in tbody</td>
+                <td>td in tbody</td>
+                <td>td in tbody</td>
+              </tr>
+            
+              <tr>
+                <th>th in tbody</th>
+                <td>td in tbody</td>
+                <td>td in tbody</td>
+                <td>td in tbody</td>
+              </tr>
+            
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>th in tfoot</th>
+              <td>td in tfoot</td>
+              <td>td in tfoot</td>
+              <td>td in tfoot</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <pre>
+          <code>
+&lt;table class=&#34;jnl-table&#34;&gt;
+  &lt;!-- for each &lt;th&gt; and &lt;td&gt;, classes &#39;jnl-table__cell--left&#39; or &#39;jnl-table__cell--center&#39; or &#39;jnl-table__cell--right&#39; available. --&gt;
+
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;th in thead&lt;/th&gt;
+      &lt;td&gt;td in thead&lt;/td&gt;
+      &lt;td&gt;td in thead&lt;/td&gt;
+      &lt;td&gt;td in thead&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;th in tbody&lt;/th&gt;
+      &lt;td&gt;td in tbody&lt;/td&gt;
+      &lt;td&gt;td in tbody&lt;/td&gt;
+      &lt;td&gt;td in tbody&lt;/td&gt;
+    &lt;/tr&gt;&lt;tr&gt;
+      &lt;th&gt;th in tbody&lt;/th&gt;
+      &lt;td&gt;td in tbody&lt;/td&gt;
+      &lt;td&gt;td in tbody&lt;/td&gt;
+      &lt;td&gt;td in tbody&lt;/td&gt;
+    &lt;/tr&gt;&lt;tr&gt;
+      &lt;th&gt;th in tbody&lt;/th&gt;
+      &lt;td&gt;td in tbody&lt;/td&gt;
+      &lt;td&gt;td in tbody&lt;/td&gt;
+      &lt;td&gt;td in tbody&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;th&gt;th in tfoot&lt;/th&gt;
+      &lt;td&gt;td in tfoot&lt;/td&gt;
+      &lt;td&gt;td in tfoot&lt;/td&gt;
+      &lt;td&gt;td in tfoot&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Toasts</h3>
+        <p>Four different toasts available. Demonstration is <a href="/demo">here</a>.</p>
+
+        <pre>
+          <code>
+&lt;ul class=&#34;jnl-toasts&#34;&gt;
+  &lt;li class=&#34;jnl-toast jsc-jnl-toast&#34;&gt;
+    Lorem ipsum dolor sit amet.
+  &lt;/li&gt;
+
+  &lt;li class=&#34;jnl-toast--information jsc-jnl-toast&#34;&gt;
+    &lt;i class=&#34;jnl-icon&#34;&gt;info&lt;/i&gt;Lorem ipsum dolor sit amet.
+  &lt;/li&gt;
+
+  &lt;li class=&#34;jnl-toast--success jsc-jnl-toast&#34;&gt;
+    &lt;i class=&#34;jnl-icon&#34;&gt;check_circle&lt;/i&gt;Lorem ipsum dolor sit amet.
+  &lt;/li&gt;
+
+  &lt;li class=&#34;jnl-toast--warning jsc-jnl-toast&#34;&gt;
+    &lt;i class=&#34;jnl-icon&#34;&gt;warning&lt;/i&gt;Lorem ipsum dolor sit amet.
+  &lt;/li&gt;
+&lt;/ul&gt;
+          </code>
+        </pre>
+      </section>
+    </section>
+  </article>
 </main>
 
 <footer>
 </footer>
 
 
-<script src="./assets/scripts/bundle.js"></script>
+<script src="../assets/scripts/bundle.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script>
+  function activateCodeHighlighter() {
+    if (typeof hljs === 'undefined') return;
+    hljs.initHighlightingOnLoad();
+  }
+
+  new activateCodeHighlighter();
+</script>

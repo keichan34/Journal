@@ -1,0 +1,63 @@
+@import url(http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/monokai-sublime.min.css);
+header {
+  padding: 20px;
+  background-color: #1a1a1a;
+  text-align: center;
+  color: #FFFFFF; }
+  header h1 {
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 100px;
+    line-height: 52px;
+    font-size: 42px; }
+  header figure .jnl-icon {
+    line-height: 120px;
+    font-size: 180px; }
+  header figure figcaption {
+    margin-top: -28px;
+    font-style: italic; }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px; }
+    header nav ul {
+      display: flex; }
+      header nav ul li + li {
+        margin-left: 20px; }
+
+main article {
+  width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px; }
+  main article > section {
+    padding: 40px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px #CCCCCC; }
+    main article > section h3 strong, main article > section h3 span {
+      font-style: italic;
+      font-size: 0.75em; }
+    main article > section h3 strong {
+      color: red; }
+    main article > section h3 span {
+      color: green; }
+  main article > section + section {
+    margin-top: 40px; }
+  main article > section > section + section {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #E9EFF6; }
+
+table {
+  width: 100%; }
+
+pre {
+  white-space: normal; }
+
+pre + pre {
+  margin-top: 20px; }
+
+code {
+  padding: 0 40px !important;
+  white-space: pre-wrap; }
+
+/*# sourceMappingURL=page.css.map */

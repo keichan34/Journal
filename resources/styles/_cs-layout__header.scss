@@ -19,16 +19,18 @@
 }
 
 .jnl-layout__header__list,
-.jnl-layout__header__list--bottom {
-  display: flex;
-  height: 100%;
-}
-
-.jnl-layout__header__list--bottom {
+[class^='jnl-layout__header__list--'] {
   position: absolute;
   top: 0;
+  display: flex;
+}
+
+.jnl-layout__header__list {
+  left: 0;
+}
+
+.jnl-layout__header__list--right {
   right: 0;
-  height: 100%;
 }
 
 .jnl-layout__header__list__item {

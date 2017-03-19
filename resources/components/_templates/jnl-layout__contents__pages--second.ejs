@@ -1,7 +1,7 @@
+<!-- 'data-pene-target' property would be called from 'data-pane-href' property. -->
 <div data-pane-target="demo-pane-second" class="jnl-layout__contents__pages jsc-jnl-layout__pane">
   <h2 class="jnl-layout__contents__pages__headline jsc-layout__pane__headline">Lorem ipsum</h2>
 
-  <!-- TODO: WIP...
   <menu class="jnl-layout__contents__pages__toolbar">
     <button>Foo</button>
     <button>Bar</button>
@@ -9,21 +9,24 @@
   </menu>
   <label class="jnl-layout__contents__pages__search">
     <i class="jnl-icon">search</i>
-    <input type="text" placeholder="Type keywords...">
+    <!-- 'data-search-ref' property is related to 'data-search-target' property. -->
+    <input type="text" placeholder="Type keywords..." data-search-ref="demo-items">
   </label>
-  -->
 
   <div class="jnl-layout__contents__items">
-    <ul>
+    <!-- 'data-search-target' property would called by to 'data-search-ref' property. -->
+    <ul data-search-target="demo-items">
+      <!-- 'data-pene-href' property is related to 'data-pane-target' property. -->
       <li><a data-pane-href="demo-pane-third">
-        <label class="jnl-layout__contents__items__label--primary">WIP</label>
+        <label class="jnl-layout__contents__items__label">Lorem</label>
         <strong class="jnl-layout__contents__items__title">Elit sed do</strong>
         <small class="jnl-layout__contents__items__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</small>
       </a></li>
       <li><a data-pane-href="demo-pane-third">
-        <label class="jnl-layout__contents__items__label">TODO</label>
-        <label class="jnl-layout__contents__items__label--invalid">Warning</label>
-        <label class="jnl-layout__contents__items__label--success">Done</label>
+        <!-- 'jnl-layout__contents__items__label' or 'jnl-layout__contents__items__label--primary' or 'jnl-layout__contents__items__label--success' or 'jnl-layout__contents__items__label--warning' available. -->
+        <label class="jnl-layout__contents__items__label--primary">Ipsum</label>
+        <label class="jnl-layout__contents__items__label--invalid">Dolor</label>
+        <label class="jnl-layout__contents__items__label--success">Sitamet</label>
         <strong class="jnl-layout__contents__items__title">Eiusmod tempor</strong>
         <small class="jnl-layout__contents__items__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</small>
       </a></li>

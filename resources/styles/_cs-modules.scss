@@ -7,6 +7,13 @@
 @import './_cs-modules__buttons.scss';
 
 
+.jnl-font--midpriority { color: $fgcolor--midpriority; }
+.jnl-font--lowpriority { color: $fgcolor--lowpriority; }
+.jnl-font--primary { color: $fgcolor--primary; }
+.jnl-font--success { color: $fgcolor--valid; }
+.jnl-font--warning { color: $fgcolor--invalid; }
+
+
 .jnl-icon {
   display: inline-block;
   line-height: 1;

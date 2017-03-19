@@ -1,0 +1,96 @@
+header {
+  padding: 20px;
+  background-color: lighten($bgcolor__overlay__base, 10%);
+  text-align: center;
+  color: $fgcolor--darkbg;
+
+  h1 {
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 100px;
+    line-height: 52px;
+    font-size: 42px;
+  }
+
+  figure {
+    .jnl-icon {
+      line-height: 120px;
+      font-size: 180px;
+    }
+
+    figcaption {
+      margin-top: -28px;
+      font-style: italic;
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+
+    ul {
+      display: flex;
+
+      li + li {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+main {
+  article {
+    width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    > section {
+      padding: 40px;
+      background-color: $bgcolor--normal;
+      box-shadow: 0 2px 4px #CCCCCC;
+
+      h3 {
+        strong, span {
+          font-style: italic;
+          font-size: 0.75em;
+        }
+
+        strong {
+          color: $fgcolor--invalid;
+        }
+
+        span {
+          color: $fgcolor--valid;
+        }
+      }
+    }
+
+    > section + section {
+      margin-top: 40px;
+    }
+
+    > section > section + section {
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 2px solid $bdcolor--normal;
+    }
+  }
+}
+
+table {
+  width: 100%;
+}
+
+pre {
+  white-space: normal;
+}
+
+pre + pre {
+  margin-top: 20px;
+}
+
+code {
+  padding: 0 40px !important;
+  white-space: pre-wrap;
+}

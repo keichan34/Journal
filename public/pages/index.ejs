@@ -4,10 +4,574 @@
 
 <% include ../../resources/components/_header.ejs %>
 
-<main>
+<link rel="stylesheet" href="./assets/styles/page.css">
 
+<main>
+  <article>
+    <section>
+      <h2>Concept</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
+
+    <section>
+      <h2>Getting Started / Demonstration</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>You can check the demonstration with <a href="/demo">here</a>.</p>
+    </section>
+
+    <section>
+      <h2>Layout</h2>
+
+      <section>
+        <h3>Side Navigation <strong>* Required</strong></h3>
+        <p>Left navigation with Open / Close toggle available. You can set any static links. Demonstration is <a href="/demo">here</a>.</p>
+
+        <pre>
+          <code>
+<%= include('../../resources/components/_templates/jnl-navigation.ejs'); %>
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Header<strong>* Required</strong></h3>
+        <p>White header. You can set any static links. Demonstration is <a href="/demo">here</a>.</p>
+
+        <pre>
+          <code>
+<%= include('../../resources/components/_templates/jnl-layout__header.ejs'); %>
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Footer <span>Optional</span></h3>
+        <p>Blue Footer. You can set any static links. Demonstration is <a href="/demo">here</a>.</p>
+
+        <pre>
+          <code>
+<%= include('../../resources/components/_templates/jnl-layout__footer.ejs'); %>
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Panes <strong>* At least 1 required</strong></h3>
+        <p>Pages list, items list, 850-width contents page available. Demonstration is <a href="/demo">here</a>.</p>
+
+        <pre>
+          <code>
+<%= include('../../resources/components/_templates/jnl-layout__contents__pages--first.ejs'); %>
+          </code>
+        </pre>
+
+        <pre>
+          <code>
+<%= include('../../resources/components/_templates/jnl-layout__contents__pages--second.ejs'); %>
+          </code>
+        </pre>
+
+        <pre>
+          <code>
+<%= `<!-- 'data-pene-target' property would be called from 'data-pane-href' property. -->
+<article data-pane-target="demo-pane-third" class="jnl-layout__contents__article jsc-jnl-layout__pane">
+  <h2 class="jnl-layout__contents__article__headline jsc-layout__pane__headline">Lorem ipsum dolor sit amet</h2>
+
+  <div class="jnl-layout__contents__article__sections">
+    <section class="jnl-layout__contents__article__sections__section">
+      <h3 class="jnl-layout__contents__article__sections__section__headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
+  </div>
+</article>` %>
+          </code>
+        </pre>
+      </section>
+    </section>
+
+    <% var $exampleTableHead = `
+      <thead>
+        <tr>
+          <th>Examples</th>
+          <td></td>
+        </tr>
+      </thead>
+    `; %>
+
+    <section>
+      <h2>Styles</h2>
+
+      <section>
+        <h3>Typography</h3>
+
+        <table class="jnl-table">
+          <%- $exampleTableHead %>
+          <tbody>
+            <% $styles.typography.forEach(function(key, value) { %>
+            <tr>
+              <th><%= key.code %></th>
+              <td>
+                <<%= key.code %>><%= key.text %></<%= key.code %>>
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Icons</h3>
+        <p>You can use all of icons in <a href="https://material.io/icons/" rel="nofollow" target="_blank">Material Icons by Google MATERIAL DESIGN</a>. You can change color / size as you like via CSS.</p>
+
+        <table class="jnl-table">
+          <%- $exampleTableHead %>
+          <tbody>
+            <% $styles.icons.forEach(function(key, value) { %>
+              <tr>
+                <th>
+                  <i class="jnl-icon jnl-font--primary" style="font-size: 50px;"><%= key.text %></i>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+<%= `<i class="jnl-icon">${key.text}</i>` %>
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Colours</h3>
+        <table class="jnl-table">
+          <%- $exampleTableHead %>
+          <tbody>
+            <% $styles.colours.forEach(function(key, value) { %>
+              <tr>
+                <% if (key.hasClass) { %>
+                  <th class="jnl-font--<%= key.code %>">
+                <% } else { %>
+                  <th>
+                <% } %>
+                  This is <%= key.code %>.
+                </th>
+                <td>
+                  <pre>
+                    <code>
+<% if (key.hasClass) { %><%= `<p class="jnl-font--${key.code}">` %><% } else { %><%= `<p>` %><% } %>
+  <%= `This is ${key.text}` %>
+<%= `</p>` %>
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Buttons</h3>
+        <table class="jnl-table">
+          <%- $exampleTableHead %>
+          <tbody>
+            <% $styles.buttons.forEach(function(key, value) { %>
+              <tr>
+                <th>
+                  <% if ( key.hasClass ) { %>
+                    <button class="jnl-button--<%= key.code %>">
+                  <% } else { %>
+                    <button class="jnl-button">
+                  <% } %>
+                    This is <%= key.code %> button.
+                  </button>
+                </th>
+                <td>
+                  <pre>
+                    <code>
+<% if ( key.hasClass ) { %><%= `<button class="jnl-button--${key.code}">` %><% } else { %><%= `<button class="jnl-button">` %><% } %>
+  This is <%= key.code %> button.
+<%= `</button>` %>
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+
+        <p>Whereever you can set buttons horizontaly with <code>jnl-buttons-list</code> class.</p>
+
+        <table class="jnl-table">
+          <tbody>
+            <tr>
+              <th>
+                <ul class="jnl-buttons-list">
+                  <% for (var i = 0; i < 3; i++) { %>
+                    <li><button class="jnl-button">This is default button.</button></li>
+                  <% } %>
+                </ul>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+                  <code>
+<%= `<ul class="jnl-buttons-list">` %>
+  <% for (var i = 0; i < 3; i++) { %><%= `<li><button class="jnl-button">This is default button.</button></li>` %><% } %>
+<%= `</ul>` %>
+                  </code>
+                </pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Form Field - Text Fields</h3>
+        <table class="jnl-table">
+          <%- $exampleTableHead %>
+          <tbody>
+            <% $styles.inputs.forEach(function(key, value) { %>
+              <tr>
+                <td>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Input, <%= key.text %></legend>
+                    <input type="<%= key.code %>" value="<%= key.value %>" class="jnl-formfield__input<%= key.className %>">
+                  </fieldset>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+<%= `<fieldset class="jnl-formfield">
+  <legend class="jnl-formfield__label">Input, ${key.text}</legend>
+  <input type="${key.code}" value="${key.value}" class="jnl-formfield__input${key.className}">
+</fieldset>` %>
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Form Field - Textarea</h3>
+        <table class="jnl-table">
+          <%- $exampleTableHead %>
+          <tbody>
+            <% $styles.textareas.forEach(function(key, value) { %>
+              <tr>
+                <th>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Textarea<%= key.className %></legend>
+                    <textarea class="jnl-formfield__textarea<%= key.className %>">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+                  </fieldset>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+<%= `<fieldset class="jnl-formfield">
+  <legend class="jnl-formfield__label">Textarea${key.className}</legend>
+  <textarea class="jnl-formfield__textarea${key.className}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+</fieldset>` %>
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Form Field - Selectbox</h3>
+        <table class="jnl-table">
+          <%- $exampleTableHead %>
+          <tbody>
+            <% $styles.textareas.forEach(function(key, value) { %>
+              <tr>
+                <th>
+                  <fieldset class="jnl-formfield">
+                    <legend class="jnl-formfield__label">Select</legend>
+                    <span class="jnl-formfield__select<%= key.className %> jsc-jnl-formfield__select">
+                      <select>
+                        <option value=""></option>
+                        <option value="option-1st">option-1st</option>
+                        <option value="option-2nd">option-2nd</option>
+                        <option value="option-3rd">option-3rd</option>
+                      </select>
+                    </span>
+                  </fieldset>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <pre>
+                    <code>
+<%= `<fieldset class="jnl-formfield">
+  <legend class="jnl-formfield__label">Select</legend>
+
+  <!-- <select> tag is needed to wrapped by <span class="..."></span> the below. -->
+  <span class="jnl-formfield__select${key.className} jsc-jnl-formfield__select">
+    <select>
+      <option value=""></option>
+      <option value="option-1st">option-1st</option>
+      <option value="option-2nd">option-2nd</option>
+      <option value="option-3rd">option-3rd</option>
+    </select>
+  </span>
+</fieldset>` %>
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Form Field - Checkboxes / Radio Buttons</h3>
+
+        <table class="jnl-table">
+          <%- $exampleTableHead %>
+          <tbody>
+            <tr>
+              <td>
+                <fieldset class="jnl-formfield">
+                  <legend class="jnl-formfield__label">Input Checkbox</legend>
+
+                  <ul class="jnl-formfield__checkboxes">
+                    <% for (var i = 0; i < 3; i++) { %>
+                      <li>
+                        <label class="jnl-formfield__checkbox jsc-jnl-formfield__checkbox">
+                          <input type="checkbox" value="Checkbox Input">
+                          <span>Checkbox Input</span>
+                        </label>
+                      </li>
+                    <% } %>
+                  </ul>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+                  <code>
+<%= `<fieldset class="jnl-formfield">
+  <legend class="jnl-formfield__label">Input Checkbox</legend>
+
+  <ul class="jnl-formfield__checkboxes">` %>
+    <% for (var i = 0; i < 3; i++) { %>
+    <%= `<li>
+      <label class="jnl-formfield__checkbox jsc-jnl-formfield__checkbox">
+        <input type="checkbox" value="Checkbox Input">
+        <span>Checkbox Input</span>
+      </label>
+    </li>` %>
+    <% } %>
+  <%= `</ul>
+</fieldset>` %>
+                  </code>
+                </pre>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <fieldset class="jnl-formfield">
+                  <legend class="jnl-formfield__label">Input Radio</legend>
+
+                  <ul class="jnl-formfield__radios">
+                    <% for (var i = 0; i < 3; i++) { %>
+                      <li>
+                        <label class="jnl-formfield__radio jsc-jnl-formfield__radio">
+                          <input type="radio" value="Radio Input">
+                          <span>Radio Input</span>
+                        </label>
+                      </li>
+                    <% } %>
+                  </ul>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+                  <code>
+<%= `<fieldset class="jnl-formfield">
+  <legend class="jnl-formfield__label">Input Radio</legend>
+
+  <ul class="jnl-formfield__radios">` %>
+    <% for (var i = 0; i < 3; i++) { %>
+    <%= `<li>
+      <label class="jnl-formfield__radio jsc-jnl-formfield__radio">
+        <input type="radio" value="Radio Input">
+        <span>Radio Input</span>
+      </label>
+    </li>` %>
+    <% } %>
+  <%= `</ul>
+</fieldset>` %>
+                  </code>
+                </pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Form Field - File Attachment</h3>
+        <table class="jnl-table">
+          <%- $exampleTableHead %>
+          <tbody>
+            <tr>
+              <th>
+                <fieldset class="jnl-formfield">
+                  <legend class="jnl-formfield__label">Input File</legend>
+                  <span class="jnl-formfield__file__appearance">
+                    <input type="file" value="File Input" class="jnl-formfield__file jsc-jnl-formfield__file__input">
+                    <span class="jsc-jnl-formfield__file__text"><i class="jnl-icon">add</i> add file</span>
+                  </span>
+                </fieldset>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+                  <code>
+  <%= `<fieldset class="jnl-formfield">
+    <legend class="jnl-formfield__label">Input File</legend>
+    <span class="jnl-formfield__file__appearance">
+      <input type="file" value="File Input" class="jnl-formfield__file jsc-jnl-formfield__file__input">
+      <span class="jsc-jnl-formfield__file__text"><i class="jnl-icon">add</i> add file</span>
+    </span>
+  </fieldset>` %>
+                  </code>
+                </pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Table</h3>
+
+        <table class="jnl-table">
+          <thead>
+            <tr>
+              <th>th in thead</th>
+              <td>td in thead</td>
+              <td>td in thead</td>
+              <td>td in thead</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (var i = 0; i < 3; i++) { %>
+              <tr>
+                <th>th in tbody</th>
+                <td>td in tbody</td>
+                <td>td in tbody</td>
+                <td>td in tbody</td>
+              </tr>
+            <% } %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>th in tfoot</th>
+              <td>td in tfoot</td>
+              <td>td in tfoot</td>
+              <td>td in tfoot</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <pre>
+          <code>
+<%= `<table class="jnl-table">
+  <!-- for each <th> and <td>, classes 'jnl-table__cell--left' or 'jnl-table__cell--center' or 'jnl-table__cell--right' available. -->
+
+  <thead>
+    <tr>
+      <th>th in thead</th>
+      <td>td in thead</td>
+      <td>td in thead</td>
+      <td>td in thead</td>
+    </tr>
+  </thead>
+  <tbody>` %>
+    <% for (var i = 0; i < 3; i++) { %><%= `<tr>
+      <th>th in tbody</th>
+      <td>td in tbody</td>
+      <td>td in tbody</td>
+      <td>td in tbody</td>
+    </tr>` %><% } %><%= `
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>th in tfoot</th>
+      <td>td in tfoot</td>
+      <td>td in tfoot</td>
+      <td>td in tfoot</td>
+    </tr>
+  </tfoot>
+</table>` %>
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Toasts</h3>
+        <p>Four different toasts available. Demonstration is <a href="/demo">here</a>.</p>
+
+        <pre>
+          <code>
+<%= `<ul class="jnl-toasts">
+  <li class="jnl-toast jsc-jnl-toast">
+    Lorem ipsum dolor sit amet.
+  </li>
+
+  <li class="jnl-toast--information jsc-jnl-toast">
+    <i class="jnl-icon">info</i>Lorem ipsum dolor sit amet.
+  </li>
+
+  <li class="jnl-toast--success jsc-jnl-toast">
+    <i class="jnl-icon">check_circle</i>Lorem ipsum dolor sit amet.
+  </li>
+
+  <li class="jnl-toast--warning jsc-jnl-toast">
+    <i class="jnl-icon">warning</i>Lorem ipsum dolor sit amet.
+  </li>
+</ul>` %>
+          </code>
+        </pre>
+      </section>
+    </section>
+  </article>
 </main>
 
 <% include ../../resources/components/_footer.ejs %>
 
-<script src="./assets/scripts/bundle.js"></script>
+<script src="../assets/scripts/bundle.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script>
+  function activateCodeHighlighter() {
+    if (typeof hljs === 'undefined') return;
+    hljs.initHighlightingOnLoad();
+  }
+
+  new activateCodeHighlighter();
+</script>

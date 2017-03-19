@@ -26,10 +26,25 @@ class InitializeApp {
   }
 
   private initializeLayout(): void {
+    this.activateToasts();
     this.toggleSideNavigation();
     this.posiotioningPanes();
     this.insertArrowToMenu();
     this.adjustAppearanceOfFormFields();
+    this.activateItemsSearch();
+  }
+
+  private activateToasts(): void {
+    const durations: Types.Durations = this.durations;
+    const $toasts: JQuery = $('.jsc-jnl-toast');
+
+    $toasts.click(function() {
+      $(this).fadeOut(durations.appearance);
+
+      setTimeout(() => {
+        $(this).remove();
+      }, durations.appearance);
+    });
   }
 
   private toggleSideNavigation(): void {
@@ -57,6 +72,9 @@ class InitializeApp {
   private adjustAppearanceOfFormFields(): void {
     const $checkboxes: JQuery = $('.jsc-jnl-formfield__checkbox');
     const $radios: JQuery = $('.jsc-jnl-formfield__radio');
+    const $selects: JQuery = $('.jsc-jnl-formfield__select');
+    const $fileInputs: JQuery = $('.jsc-jnl-formfield__file__input');
+    const $fileTexts: JQuery = $('.jsi-jnl-formfield__file__text');
     const activeClassName: string = 'is-active';
 
     const $appearance = (target: string) => `
@@ -89,6 +107,25 @@ class InitializeApp {
       } else {
         $(this).find('.jsc-jnl-formfield__radio__background').removeClass(activeClassName);
       }
+    });
+
+    $selects.each(function() {
+      const downArrow: string = `
+        <i class="jnl-icon">arrow_drop_down</i>
+      `;
+
+      $(this).append(downArrow);
+    });
+
+    $fileInputs.on('change', function() {
+      const _this: any = $(this);
+      const file: any = {
+        name: _this[0].files[0].name,
+        size: _this[0].files[0].size,
+        type: _this[0].files[0].type
+      };
+
+      _this.siblings($fileTexts).text(`${file.name} (${file.type}, ${Math.floor(file.size / 1000)}KB)`);
     });
   }
 
@@ -150,6 +187,7 @@ class InitializeApp {
       const $_this: JQuery = $(this);
       const $parent: JQuery = $_this.closest('.jsc-jnl-layout__pane');
       const targetPaneName: string = $_this.data('pane-href');
+      const threshold: number = 150;
 
       $panes.each(function() {
         if (
@@ -157,7 +195,7 @@ class InitializeApp {
           parseInt($(this).css('left'), 10) === windowWidth - navigation.innerWidth()
         ) {
           $(this).css({
-            left: parseInt($parent.css('left'), 10) + $parent.innerWidth()
+            left: parseInt($parent.css('left'), 10) + $parent.innerWidth() - threshold
           });
 
           setTimeout(() => {
@@ -202,6 +240,38 @@ class InitializeApp {
   //       $(this).css({ left: `${targetLeftPosition}px`});
   //     }
   //   });
+  }
+
+  private activateItemsSearch(): void {
+    const $controller: JQuery = $('[data-search-ref]');
+
+    $controller.on('change keyup', function() {
+      const $_this: JQuery = $(this);
+      const currentKeyWord: string = $_this.val();
+      let $searchTarget: JQuery;
+
+      $('[data-search-target]').each(function() {
+        if ( $(this).data('search-target') === $_this.data('search-ref') ) {
+          $searchTarget = $(this);
+        }
+
+        if ( !$searchTarget ) {
+          throw new Error(`Error: search-target ${$_this.data('search-ref')} should be defined!`);
+        }
+
+        $searchTarget.find('a').each(function() {
+          if ( currentKeyWord === '' ) {
+            $(this).css({ display: 'list-item' });
+
+          } else if ( $(this)[0].innerText.indexOf(currentKeyWord) >= 0 ) {
+            $(this).css({ display: 'list-item' });
+
+          } else {
+            $(this).css({ display: 'none' });
+          }
+        })
+      });
+    });
   }
 }
 

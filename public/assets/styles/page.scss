@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+// Import Assets fron CDN
+// https://highlightjs.org/
+@import url(http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/monokai-sublime.min.css);
+
+// Style Guides
+@import '../../../resources/styles/_cs-variables.scss';
+
+// Paged Guides
+@import '../../../resources/styles/pages/_ps-layout.scss';

@@ -1,12 +1,11 @@
 .jnl-layout__footer,
-.jnl-layout__footer--center,
-.jnl-layout__footer--right {
+[class^='jnl-layout__footer--'] {
   z-index: 999;
   overflow: hidden;
   position: absolute;
   right: 0;
   bottom: 0;
-  left: $cs-navigation__width;
+  left: 0;
   display: flex;
   height: $cs-footer__height;
   background-color: #14324F;
@@ -15,8 +14,7 @@
 
 .jnl-navigation--opened + .jnl-layout {
   .jnl-layout__footer,
-  .jnl-layout__footer--center,
-  .jnl-layout__footer--right {
+  [class^='jnl-layout__footer--'] {
     left: $cs-navigation__width--opened;
   }
 }

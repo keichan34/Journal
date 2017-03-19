@@ -10238,10 +10238,23 @@ var InitializeApp = (function () {
         };
     };
     InitializeApp.prototype.initializeLayout = function () {
+        this.activateToasts();
         this.toggleSideNavigation();
         this.posiotioningPanes();
         this.insertArrowToMenu();
         this.adjustAppearanceOfFormFields();
+        this.activateItemsSearch();
+    };
+    InitializeApp.prototype.activateToasts = function () {
+        var durations = this.durations;
+        var $toasts = $('.jsc-jnl-toast');
+        $toasts.click(function () {
+            var _this = this;
+            $(this).fadeOut(durations.appearance);
+            setTimeout(function () {
+                $(_this).remove();
+            }, durations.appearance);
+        });
     };
     InitializeApp.prototype.toggleSideNavigation = function () {
         var $navigation = $('#jsi-jnl-navigation');
@@ -10264,6 +10277,9 @@ var InitializeApp = (function () {
     InitializeApp.prototype.adjustAppearanceOfFormFields = function () {
         var $checkboxes = $('.jsc-jnl-formfield__checkbox');
         var $radios = $('.jsc-jnl-formfield__radio');
+        var $selects = $('.jsc-jnl-formfield__select');
+        var $fileInputs = $('.jsc-jnl-formfield__file__input');
+        var $fileTexts = $('.jsi-jnl-formfield__file__text');
         var activeClassName = 'is-active';
         var $appearance = function (target) { return "\n      <span class=\"jnl-formfield__" + target + "__background jsc-jnl-formfield__" + target + "__background\">\n        <span class=\"jnl-formfield__" + target + "__appearance" + (target === 'checkbox' ? ' jnl-icon' : '') + "\">\n          " + (target === 'checkbox' ? 'check' : '') + "\n        </span>\n      </span>\n    "; };
         $checkboxes.each(function () {
@@ -10287,6 +10303,19 @@ var InitializeApp = (function () {
             else {
                 $(this).find('.jsc-jnl-formfield__radio__background').removeClass(activeClassName);
             }
+        });
+        $selects.each(function () {
+            var downArrow = "\n        <i class=\"jnl-icon\">arrow_drop_down</i>\n      ";
+            $(this).append(downArrow);
+        });
+        $fileInputs.on('change', function () {
+            var _this = $(this);
+            var file = {
+                name: _this[0].files[0].name,
+                size: _this[0].files[0].size,
+                type: _this[0].files[0].type
+            };
+            _this.siblings($fileTexts).text(file.name + " (" + file.type + ", " + Math.floor(file.size / 1000) + "KB)");
         });
     };
     InitializeApp.prototype.isPaneShown = function (pane) {
@@ -10338,11 +10367,12 @@ var InitializeApp = (function () {
             var $_this = $(this);
             var $parent = $_this.closest('.jsc-jnl-layout__pane');
             var targetPaneName = $_this.data('pane-href');
+            var threshold = 150;
             $panes.each(function () {
                 if ($(this).data('pane-target') === targetPaneName &&
                     parseInt($(this).css('left'), 10) === windowWidth - navigation.innerWidth()) {
                     $(this).css({
-                        left: parseInt($parent.css('left'), 10) + $parent.innerWidth()
+                        left: parseInt($parent.css('left'), 10) + $parent.innerWidth() - threshold
                     });
                     setTimeout(function () {
                         _this.adjustPanePosition();
@@ -10385,6 +10415,33 @@ var InitializeApp = (function () {
         //       $(this).css({ left: `${targetLeftPosition}px`});
         //     }
         //   });
+    };
+    InitializeApp.prototype.activateItemsSearch = function () {
+        var $controller = $('[data-search-ref]');
+        $controller.on('change keyup', function () {
+            var $_this = $(this);
+            var currentKeyWord = $_this.val();
+            var $searchTarget;
+            $('[data-search-target]').each(function () {
+                if ($(this).data('search-target') === $_this.data('search-ref')) {
+                    $searchTarget = $(this);
+                }
+                if (!$searchTarget) {
+                    throw new Error("Error: search-target " + $_this.data('search-ref') + " should be defined!");
+                }
+                $searchTarget.find('a').each(function () {
+                    if (currentKeyWord === '') {
+                        $(this).css({ display: 'list-item' });
+                    }
+                    else if ($(this)[0].innerText.indexOf(currentKeyWord) >= 0) {
+                        $(this).css({ display: 'list-item' });
+                    }
+                    else {
+                        $(this).css({ display: 'none' });
+                    }
+                });
+            });
+        });
     };
     return InitializeApp;
 }());
