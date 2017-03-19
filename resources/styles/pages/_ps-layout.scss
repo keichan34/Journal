@@ -1,3 +1,7 @@
+body {
+  overflow: auto;
+}
+
 header {
   padding: 20px;
   background-color: lighten($bgcolor__overlay__base, 10%);
