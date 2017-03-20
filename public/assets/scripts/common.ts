@@ -194,8 +194,10 @@ class InitializeApp {
           $(this).data('pane-target') === targetPaneName &&
           parseInt($(this).css('left'), 10) === windowWidth - navigation.innerWidth()
         ) {
+          const leftOffset: number = parseInt($parent.css('left'), 10) + threshold;
           $(this).css({
-            left: parseInt($parent.css('left'), 10) + $parent.innerWidth() - threshold
+            left: leftOffset,
+            width: "calc(100% - " + leftOffset + "px)"
           });
 
           setTimeout(() => {
